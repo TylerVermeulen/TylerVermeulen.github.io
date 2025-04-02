@@ -1,0 +1,66 @@
+body {
+    background-color: #000410 !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styling */
+nav.taakbalk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0e1528;
+    width: 100%;
+    border-radius: 15px;
+    height: 80px;
+    position: relative;
+}
+
+nav.taakbalk ul {
+    display: flex;
+    justify-content: center; /* Centers items inside */
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0; /* Remove auto to prevent weird centering issues */
+}
+
+nav.taakbalk li {
+    list-style: none;
+}
+
+nav.taakbalk li a {
+    display: block;
+    color: #f8edd2;
+    text-align: center;
+    padding: 10px 16px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: "Bruno Ace", sans-serif;
+    line-height: 1.5;
+}
+
+nav.taakbalk li a:hover {
+    background-color: #030c2b;
+    border-radius: 10px;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    nav.taakbalk {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    nav.taakbalk ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1.2rem;
+        padding: 8px 12px;
+    }
+}

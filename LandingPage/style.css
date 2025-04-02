@@ -1,0 +1,194 @@
+/* General Reset */
+body {
+    background-color: #000410 !important;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Navbar Styling */
+nav.taakbalk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0e1528;
+    width: 100%;
+    border-radius: 15px;
+    height: 80px;
+    position: relative;
+}
+
+nav.taakbalk ul {
+    display: flex;
+    justify-content: center; /* Centers items inside */
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0; /* Remove auto to prevent weird centering issues */
+}
+
+nav.taakbalk li {
+    list-style: none;
+}
+
+nav.taakbalk li a {
+    display: block;
+    color: #f8edd2;
+    text-align: center;
+    padding: 10px 16px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: "Bruno Ace", sans-serif;
+    line-height: 1.5;
+}
+
+nav.taakbalk li a:hover {
+    background-color: #030c2b;
+    border-radius: 10px;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    nav.taakbalk {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    nav.taakbalk ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1.2rem;
+        padding: 8px 12px;
+    }
+}
+
+/* Container & Swiper Styling */
+.container {
+    background-color: transparent !important;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    padding-top: 5vh;
+    justify-content: center;
+    align-items: center; /* Ensures proper vertical alignment */
+}
+
+.swiper {
+    width: 80%;
+    border-radius: 50px;
+    height: fit-content;
+}
+
+.swiper-slide img {
+    width: 100%;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+    color: #f8edd2;
+}
+
+.swiper .swiper-pagination-bullet-active {
+    background: #f8edd2;
+}
+
+/* Projects Header */
+.projects-header {
+    background: #0e1528;
+    padding: 2vw; /* Responsive padding */
+    border-radius: 2vw;
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2vw auto;
+}
+
+.projects-header h2 {
+    font-family: "Bruno Ace", sans-serif;
+    font-size: clamp(1.5rem, 5vw, 3rem); /* Responsive scaling */
+    color: #f8edd2;
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+    .projects-header {
+        width: 95%;
+        padding: 3vw;
+    }
+}
+
+/* Game Cards */
+.game-card {
+    background: #0e1528;
+    border-radius: 25px;
+    padding: 15px;
+    text-align: center;
+    width: 80%;
+    height: 300px;
+    
+    position: relative;
+    
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Fix Clickable Area Issue */
+.game-card a {
+    display: flex; /* Makes entire card clickable */
+    flex-direction: column;
+   
+    width: 100%;
+    height: 100%;
+    text-decoration: none; /* Removes default link styles */
+}
+
+.game-image img {
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: drop-shadow(0 0 15px rgba(248, 237, 210, 1));
+
+}
+
+.game-card:hover {
+    transform: scale(1.1); /* Prevents excessive zoom */
+}
+
+.game-title {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    color: #f8edd2;
+    font-family: "Bruno Ace", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background: rgba(0, 4, 16, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.row {
+    gap: 10px;
+}
+
+/* Ensure Responsive Layout */
+@media (max-width: 1024px) {
+    .game-card {
+        width: 90%;
+        height: auto; /* Adjust height dynamically */
+    }
+}
+
+@media (max-width: 768px) {
+    .game-card {
+        width: 100%; /* Make cards take full width on mobile */
+    }
+}
+
+
