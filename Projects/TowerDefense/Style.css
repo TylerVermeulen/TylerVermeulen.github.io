@@ -3,7 +3,9 @@ body {
     margin: 0;
     padding: 0;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 /* Navbar Styling */
 nav.taakbalk {
     display: flex;
@@ -81,13 +83,18 @@ nav.taakbalk li a:hover {
     gap: 15px;
 }
 
-/* Big image */
 .main-image {
-    width: 300px;
+    width: 350px; /* increased from 300px */
+    max-width: 100%;
     height: auto;
     border-radius: 20px;
-    box-shadow: 0 0 25px rgba(248, 237, 210, 0.8); /* illuminated look */
+    box-shadow: 0 0 25px rgba(248, 237, 210, 1); /* illuminated look */
+    transition: transform 0.3s ease-in-out;
 }
+.main-image:hover {
+    transform: scale(1.05);
+}
+
 
 /* Icon row under the image */
 .icon-row {
@@ -114,7 +121,7 @@ nav.taakbalk li a:hover {
     min-width: 300px;
     line-height: 1.8; /* better readability */
     font-size: 1.1rem;
-    box-shadow: 0 0 25px rgba(248, 237, 210, 0.1);
+    box-shadow: 0 0 25px rgba(248, 237, 210, 0.6);
 }
 
 /* Optional: Improve heading readability */
@@ -132,4 +139,22 @@ nav.taakbalk li a:hover {
 
 .text-section li {
     margin-bottom: 8px;
+}
+/* Extra image below text */
+.text-side-image {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.below-text-image {
+    width: 95%;
+    max-width: 700px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(248, 237, 210, 1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.below-text-image:hover {
+    transform: scale(1.05);
 }

@@ -14,7 +14,7 @@ nav.taakbalk {
     align-items: center;
     background: #0e1528;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 25px;
     height: 80px;
     position: relative;
 }
@@ -46,7 +46,7 @@ nav.taakbalk li a {
 
 nav.taakbalk li a:hover {
     background-color: #000410;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 /* Responsive Navbar */
