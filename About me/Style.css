@@ -42,7 +42,7 @@ nav.taakbalk li a {
 }
 
 nav.taakbalk li a:hover {
-    background-color: #030c2b;
+    background-color: #000410;
     border-radius: 10px;
 }
 
@@ -63,4 +63,73 @@ nav.taakbalk li a:hover {
         font-size: 1.2rem;
         padding: 8px 12px;
     }
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+/* Left Side: Image + Icons */
+.image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Big image */
+.main-image {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(248, 237, 210, 0.8); /* illuminated look */
+}
+
+/* Icon row under the image */
+.icon-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 0 5px rgba(248, 237, 210, 0.5));
+}
+
+.text-section {
+    background-color: #121a2e; /* slightly lighter for contrast */
+    color: #f8edd2;
+    font-family: "Bruno Ace", sans-serif;
+    padding: 35px;
+    border-radius: 40px;
+    max-width: 700px;
+    flex: 1;
+    min-width: 300px;
+    line-height: 1.8; /* better readability */
+    font-size: 1.1rem;
+    box-shadow: 0 0 25px rgba(248, 237, 210, 0.1);
+}
+
+/* Optional: Improve heading readability */
+.text-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff6d5;
+}
+
+/* Optional: Make bullet lists easier to scan */
+.text-section ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.text-section li {
+    margin-bottom: 8px;
 }

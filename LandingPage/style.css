@@ -45,7 +45,7 @@ nav.taakbalk li a {
 }
 
 nav.taakbalk li a:hover {
-    background-color: #030c2b;
+    background-color: #000410;
     border-radius: 10px;
 }
 
@@ -80,9 +80,10 @@ nav.taakbalk li a:hover {
 }
 
 .swiper {
-    width: 80%;
+    width: 90%;
     border-radius: 50px;
     height: fit-content;
+    box-shadow: 0 4px 10px rgba(248, 237, 210, 0.8);
 }
 
 .swiper-slide img {
@@ -107,6 +108,7 @@ nav.taakbalk li a:hover {
     width: 90%;
     max-width: 1200px;
     margin: 2vw auto;
+    box-shadow: 0 4px 10px rgba(248, 237, 210, 0.8);
 }
 
 .projects-header h2 {
@@ -133,7 +135,7 @@ nav.taakbalk li a:hover {
     height: 300px;
     
     position: relative;
-    
+    box-shadow: 0 4px 10px rgba(248, 237, 210, 0.8);
     transition: transform 0.3s ease-in-out;
 }
 
