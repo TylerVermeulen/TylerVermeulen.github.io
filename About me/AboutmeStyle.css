@@ -3,7 +3,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 /* Navbar Styling */
 nav.taakbalk {
     display: flex;
@@ -15,7 +14,6 @@ nav.taakbalk {
     height: 80px;
     position: relative;
 }
-
 nav.taakbalk ul {
     display: flex;
     justify-content: center; /* Centers items inside */
@@ -24,11 +22,9 @@ nav.taakbalk ul {
     padding: 0;
     margin: 0; /* Remove auto to prevent weird centering issues */
 }
-
 nav.taakbalk li {
     list-style: none;
 }
-
 nav.taakbalk li a {
     display: block;
     color: #f8edd2;
@@ -40,12 +36,10 @@ nav.taakbalk li a {
     font-family: "Bruno Ace", sans-serif;
     line-height: 1.5;
 }
-
 nav.taakbalk li a:hover {
     background-color: #000410;
     border-radius: 20px;
 }
-
 /* Responsive Navbar */
 @media (max-width: 768px) {
     nav.taakbalk {
@@ -53,34 +47,34 @@ nav.taakbalk li a:hover {
         height: auto;
         padding: 10px 0;
     }
-    
+   
     nav.taakbalk ul {
         flex-direction: column;
         gap: 10px;
     }
-    
+   
     nav.taakbalk li a {
         font-size: 1.2rem;
         padding: 8px 12px;
     }
 }
-
 .content-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start; /* Changed from center to flex-start */
     gap: 40px;
     padding: 40px 20px;
 }
-
 /* Left Side: Image + Icons */
 .image-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    flex-shrink: 0; /* Prevents section from growing */
+    min-width: 300px; /* Fixed minimum width */
 }
-
 /* Big image */
 .main-image {
     width: 300px;
@@ -89,20 +83,152 @@ nav.taakbalk li a:hover {
     box-shadow: 0 0 25px rgba(248, 237, 210, 0.8); /* illuminated look */
 }
 
-/* Icon row under the image */
+/* New Info Box - Styled like landing page projects */
+.info-box {
+    background: #0e1528;
+    border-radius: 25px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    max-width: 100%;
+    margin: 10px 0;
+    box-shadow: 0 4px 10px rgba(248, 237, 210, 0.8);
+    transition: transform 0.3s ease-in-out;
+}
+
+.info-box:hover {
+    transform: scale(1.05);
+}
+
+.info-box h3 {
+    color: #f8edd2;
+    font-family: "Bruno Ace", sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detail-item {
+    color: #f8edd2;
+    font-family: "Bruno Ace", sans-serif;
+    font-size: 0.9rem;
+    background: rgba(0, 4, 16, 0.5);
+    padding: 8px 12px;
+    border-radius: 15px;
+    transition: background 0.3s ease;
+}
+
+.detail-item:hover {
+    background: rgba(0, 4, 16, 0.8);
+}
+
+/* Icon row under the info box */
 .icon-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
 }
-
 .icon {
     width: 50px;
     height: 50px;
     filter: drop-shadow(0 0 5px rgba(248, 237, 210, 0.5));
+    transition: transform 0.3s ease;
 }
 
+.clickable-icon {
+    cursor: pointer;
+}
+
+.clickable-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(248, 237, 210, 0.8));
+}
+
+/* Email Box Styling */
+.email-box {
+    display: none;
+    background: #0e1528;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(248, 237, 210, 0.8);
+    max-width: 300px;
+    width: 100%;
+}
+
+.email-box h4 {
+    color: #f8edd2;
+    font-family: "Bruno Ace", sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.email-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.email-address {
+    color: #f8edd2;
+    font-family: "Bruno Ace", sans-serif;
+    font-size: 0.9rem;
+    background: rgba(0, 4, 16, 0.5);
+    padding: 10px 15px;
+    border-radius: 15px;
+    word-break: break-all;
+    width: 90%;
+}
+
+.copy-btn {
+    background: #f8edd2;
+    color: #0e1528;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 15px;
+    font-family: "Bruno Ace", sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: #fff6d5;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
 .text-section {
     background-color: #121a2e; /* slightly lighter for contrast */
     color: #f8edd2;
@@ -115,21 +241,36 @@ nav.taakbalk li a:hover {
     line-height: 1.8; /* better readability */
     font-size: 1.1rem;
     box-shadow: 0 0 25px rgba(248, 237, 210, 0.1);
+    align-self: flex-start; /* Prevents text section from stretching */
 }
-
 /* Optional: Improve heading readability */
 .text-section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #fff6d5;
 }
-
 /* Optional: Make bullet lists easier to scan */
 .text-section ul {
     margin-top: 15px;
     padding-left: 20px;
 }
-
 .text-section li {
     margin-bottom: 8px;
+}
+
+/* Responsive adjustments for the info box */
+@media (max-width: 768px) {
+    .info-box {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    .info-details {
+        gap: 6px;
+    }
+    
+    .detail-item {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
 }
