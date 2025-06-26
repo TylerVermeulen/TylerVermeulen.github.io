@@ -3,6 +3,10 @@ body {
     margin: 0;
     padding: 0;
 }
+@font-face{
+    font-family: Eurostile;
+    src: url(/Fonts/eurostile.TTF);
+}
 /* Navbar Styling */
 nav.taakbalk {
     display: flex;
@@ -33,7 +37,7 @@ nav.taakbalk li a {
     transition: 0.3s ease;
     text-decoration: none;
     font-size: 1.5rem;
-    font-family: "Bruno Ace", sans-serif;
+    font-family: "Eurostile";
     line-height: 1.5;
 }
 nav.taakbalk li a:hover {
@@ -102,7 +106,7 @@ nav.taakbalk li a:hover {
 
 .info-box h3 {
     color: #f8edd2;
-    font-family: "Bruno Ace", sans-serif;
+    font-family: "Eurostile";
     font-size: 1.4rem;
     margin-bottom: 15px;
     margin-top: 0;
@@ -116,7 +120,7 @@ nav.taakbalk li a:hover {
 
 .detail-item {
     color: #f8edd2;
-    font-family: "Bruno Ace", sans-serif;
+    font-family: "Eurostile";
     font-size: 0.9rem;
     background: rgba(0, 4, 16, 0.5);
     padding: 8px 12px;
@@ -135,11 +139,25 @@ nav.taakbalk li a:hover {
     justify-content: center;
     gap: 15px;
 }
+
+/* Enhanced icon effects */
 .icon {
     width: 50px;
     height: 50px;
     filter: drop-shadow(0 0 5px rgba(248, 237, 210, 0.5));
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(248, 237, 210, 0.8));
+}
+
+/* Active state for clicked icons */
+.icon.active {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 15px rgba(248, 237, 210, 1));
 }
 
 .clickable-icon {
@@ -166,7 +184,7 @@ nav.taakbalk li a:hover {
 
 .email-box h4 {
     color: #f8edd2;
-    font-family: "Bruno Ace", sans-serif;
+    font-family: "Eurostile";
     font-size: 1.2rem;
     margin-bottom: 15px;
     margin-top: 0;
@@ -181,7 +199,7 @@ nav.taakbalk li a:hover {
 
 .email-address {
     color: #f8edd2;
-    font-family: "Bruno Ace", sans-serif;
+    font-family: "Eurostile";
     font-size: 0.9rem;
     background: rgba(0, 4, 16, 0.5);
     padding: 10px 15px;
@@ -196,7 +214,7 @@ nav.taakbalk li a:hover {
     border: none;
     padding: 8px 16px;
     border-radius: 15px;
-    font-family: "Bruno Ace", sans-serif;
+    font-family: "Eurostile";
     font-size: 0.8rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -205,6 +223,95 @@ nav.taakbalk li a:hover {
 .copy-btn:hover {
     background: #fff6d5;
     transform: scale(1.05);
+}
+
+/* Generic content box for all icons (similar to email-box) */
+.icon-content-box {
+    display: none;
+    background: #0e1528;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(248, 237, 210, 0.8);
+    max-width: 300px;
+    width: 100%;
+}
+
+.icon-content-box h4 {
+    color: #f8edd2;
+    font-family: "Eurostile";
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.icon-content-box p {
+    color: #f8edd2;
+    font-family: "Eurostile";
+    font-size: 0.9rem;
+    background: rgba(0, 4, 16, 0.5);
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin: 10px 0;
+}
+
+.icon-content-box a {
+    display: inline-block;
+    background: #f8edd2;
+    color: #0e1528;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 15px;
+    font-family: "Eurostile";
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.icon-content-box a:hover {
+    background: #fff6d5;
+    transform: scale(1.05);
+}
+
+/* Animation classes that will be added/removed by JavaScript */
+.slide-down {
+    display: block;
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+/* Enhanced icon hover effects */
+.icon {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 0 5px rgba(248, 237, 210, 0.5));
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(248, 237, 210, 0.8));
+}
+
+/* Active state for clicked icons */
+.icon.active {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 15px rgba(248, 237, 210, 1));
+}
+
+/* Animation classes that will be added/removed by JavaScript */
+.slide-down {
+    display: block;
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease-out forwards;
 }
 
 /* Animations */
@@ -232,7 +339,7 @@ nav.taakbalk li a:hover {
 .text-section {
     background-color: #121a2e; /* slightly lighter for contrast */
     color: #f8edd2;
-    font-family: "Bruno Ace", sans-serif;
+    font-family: "Eurostile";
     padding: 35px;
     border-radius: 40px;
     max-width: 700px;
@@ -272,5 +379,15 @@ nav.taakbalk li a:hover {
     .detail-item {
         font-size: 0.8rem;
         padding: 6px 10px;
+    }
+    
+    .icon-content-box {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    .icon-content-box p {
+        font-size: 0.8rem;
+        padding: 8px 12px;
     }
 }

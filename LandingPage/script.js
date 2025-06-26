@@ -1,22 +1,26 @@
+// Initialize Swiper
 const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    autoplay:{
-        delay: 5000,
-        disableOnInteraction: false,
-    },
-    loop: true,
-  
-    // If we need pagination
-    pagination: {
+  loop: true,
+  pagination: {
       el: '.swiper-pagination',
       clickable: true,
-    },
-  
-    // Navigation arrows
-    navigation: {
+  },
+  navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
-    },
-  
+  },
+  scrollbar: {
+      el: '.swiper-scrollbar',
+  },
+  autoplay: {
+      delay: 5000,
+  },
+});
 
-  });
+// Function to update project name
+function updateProjectName(name) {
+  document.getElementById('projectName').textContent = name;
+}
+
+// Example usage - you can call this function to change the project name
+// updateProjectName("Your Project Name Here");
