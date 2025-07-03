@@ -4,27 +4,52 @@ body {
     margin: 0;
     padding: 0;
 }
+@font-face{
+    font-family: Eurostile;
+    src: url(/Fonts/eurostile.TTF);
+}
 html {
     scroll-behavior: smooth;
 }
 /* Navbar Styling */
+/* Navbar Styling */
 nav.taakbalk {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Changed from center to space-between */
     align-items: center;
     background: #0e1528;
     width: 100%;
     border-radius: 25px;
     height: 80px;
     position: relative;
+    padding: 0 30px; /* Add horizontal padding */
+}
+
+.navbar-logo {
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.logo-text {
+    color: #f8edd2;
+    font-family: "Eurostile";
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+/* If you choose to use an image logo instead */
+.logo-image {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
 }
 nav.taakbalk ul {
     display: flex;
-    justify-content: center; /* Centers items inside */
+    justify-content: center;
     align-items: center;
     gap: 20px;
     padding: 0;
-    margin: 0; /* Remove auto to prevent weird centering issues */
+    margin: 0;
+    flex-grow: 1; /* Allow the nav items to take remaining space */
 }
 nav.taakbalk li {
     list-style: none;
@@ -37,7 +62,7 @@ nav.taakbalk li a {
     transition: 0.3s ease;
     text-decoration: none;
     font-size: 1.5rem;
-    font-family: "Bruno Ace", sans-serif;
+    font-family: "Eurostile";
     line-height: 1.5;
 }
 nav.taakbalk li a:hover {
@@ -49,17 +74,41 @@ nav.taakbalk li a:hover {
     nav.taakbalk {
         flex-direction: column;
         height: auto;
-        padding: 10px 0;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    
+    .navbar-logo {
+        order: -1; /* Put logo first on mobile */
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    
+    .logo-image {
+        height: 40px;
     }
    
     nav.taakbalk ul {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row; /* Keep horizontal on mobile */
+        gap: 15px;
+        flex-grow: 0;
     }
    
     nav.taakbalk li a {
         font-size: 1.2rem;
         padding: 8px 12px;
+    }
+}
+@media (max-width: 480px) {
+    nav.taakbalk ul {
+        flex-direction: column; /* Stack vertically only on very small screens */
+        gap: 10px;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
     }
 }
 /* Container & Swiper Styling */
@@ -90,31 +139,197 @@ nav.taakbalk li a:hover {
 .swiper .swiper-pagination-bullet-active {
     background: #f8edd2;
 }
-
-/* Project Name Display */
-.project-name-display {
+/* Update swiper slide to be relative positioned */
+.swiper-slide {
+    position: relative;
+}
+/* Project Info Overlay for Slider */
+.project-info-overlay {
     position: absolute;
     bottom: 20px;
     right: 20px;
+    z-index: 10;
+}
+
+/* Project Name Display - now positioned within each slide */
+.project-name-display {
     background: rgba(14, 21, 40, 0.9);
     color: #f8edd2;
-    font-family: "Bruno Ace", sans-serif;
+    font-family: "Eurostile";
     font-size: 1.2rem;
     font-weight: bold;
     padding: 10px 20px;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
     box-shadow: 0 4px 10px rgba(248, 237, 210, 0.3);
-    z-index: 10;
     backdrop-filter: blur(5px);
     border: 2px solid rgba(248, 237, 210, 0.2);
+    border-bottom: none;
+}
+
+/* Project Details for Slider */
+.project-details {
+    background: rgba(14, 21, 40, 0.8);
+    color: #f8edd2;
+    font-family: "Eurostile";
+    padding: 8px 20px 10px 20px;
+    border-radius: 0 0 15px 15px;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(248, 237, 210, 0.2);
+    border-top: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.project-engine, .project-time {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.project-engine::before {
+    content: "🎮 ";
+}
+
+.project-time::before {
+    content: "⏱️ ";
+}
+
+/* Game Cards */
+.game-card {
+    background: #0e1528;
+    border-radius: 25px;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(248, 237, 210, 0.8);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+/* Fix Clickable Area Issue */
+.game-card a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Game Image Styling */
+.game-card img {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: drop-shadow(0 0 15px rgba(248, 237, 210, 1));
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+/* Game Info Container */
+.game-info {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 10;
+    max-width: 200px;
+}
+
+/* Game Title */
+.game-title {
+    color: #f8edd2;
+    font-family: "Eurostile";
+    font-size: 14px;
+    font-weight: bold;
+    background: rgba(14, 21, 40, 0.9);
+    padding: 6px 10px;
+    border-radius: 8px 8px 0 0;
+    border: 1px solid rgba(248, 237, 210, 0.3);
+    border-bottom: none;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Game Details */
+.game-details {
+    background: rgba(14, 21, 40, 0.8);
+    padding: 4px 10px 6px 10px;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid rgba(248, 237, 210, 0.3);
+    border-top: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 10px;
+}
+
+.game-engine, .game-time {
+    color: #f8edd2;
+    font-family: "Eurostile";
+    font-size: 10px;
+    opacity: 0.9;
+    white-space: nowrap;
+}
+
+.game-engine::before {
+    content: "🎮 ";
+    font-size: 8px;
+}
+
+.game-time::before {
+    content: "⏱️ ";
+    font-size: 8px;
+}
+
+@media (max-width: 1024px) {
+    .game-card {
+        height: 250px;
+    }
+    
+    .game-info {
+        max-width: 180px;
+    }
 }
 
 @media (max-width: 768px) {
-    .project-name-display {
-        font-size: 1rem;
-        padding: 8px 15px;
-        bottom: 15px;
-        right: 15px;
+    .game-card {
+        height: 200px;
+    }
+    
+    .game-info {
+        bottom: 10px;
+        right: 10px;
+        max-width: 150px;
+    }
+    
+    .game-title {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    
+    .game-details {
+        padding: 3px 8px 4px 8px;
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .game-links {
+        padding: 3px 8px 4px 8px;
+    }
+    
+    .game-icon img {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .game-engine, .game-time {
+        font-size: 9px;
     }
 }
 
@@ -130,7 +345,7 @@ nav.taakbalk li a:hover {
     box-shadow: 0 4px 10px rgba(248, 237, 210, 0.8);
 }
 .projects-header h2 {
-    font-family: "Bruno Ace", sans-serif;
+    font-family: "Eurostile";
     font-size: clamp(1.5rem, 5vw, 3rem); /* Responsive scaling */
     color: #f8edd2;
 }
@@ -139,64 +354,5 @@ nav.taakbalk li a:hover {
     .projects-header {
         width: 95%;
         padding: 3vw;
-    }
-}
-/* Game Cards */
-.game-card {
-    background: #0e1528;
-    border-radius: 25px;
-    padding: 15px;
-    text-align: center;
-    width: 80%;
-    height: 300px;
-   
-    position: relative;
-    box-shadow: 0 4px 10px rgba(248, 237, 210, 0.8);
-    transition: transform 0.3s ease-in-out;
-}
-/* Fix Clickable Area Issue */
-.game-card a {
-    display: flex; /* Makes entire card clickable */
-    flex-direction: column;
-   
-    width: 100%;
-    height: 100%;
-    text-decoration: none; /* Removes default link styles */
-}
-.game-image img {
-    border-radius: 25px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: drop-shadow(0 0 15px rgba(248, 237, 210, 1));
-}
-.game-card:hover {
-    transform: scale(1.1); /* Prevents excessive zoom */
-}
-.game-title {
-    position: absolute;
-    bottom: 10px;
-    right: 15px;
-    color: #f8edd2;
-    font-family: "Bruno Ace", sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    background: rgba(0, 4, 16, 0.5);
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-.row {
-    gap: 10px;
-}
-/* Ensure Responsive Layout */
-@media (max-width: 1024px) {
-    .game-card {
-        width: 90%;
-        height: auto; /* Adjust height dynamically */
-    }
-}
-@media (max-width: 768px) {
-    .game-card {
-        width: 100%; /* Make cards take full width on mobile */
     }
 }

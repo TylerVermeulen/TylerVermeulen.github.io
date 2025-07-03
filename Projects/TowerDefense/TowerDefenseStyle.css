@@ -3,19 +3,24 @@ body {
     margin: 0;
     padding: 0;
 }
+@font-face{
+    font-family: Eurostile;
+    src: url(/Fonts/eurostile.TTF);
+}
 html {
     scroll-behavior: smooth;
 }
 /* Navbar Styling */
 nav.taakbalk {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Changed from center to space-between */
     align-items: center;
     background: #0e1528;
     width: 100%;
     border-radius: 25px;
     height: 80px;
     position: relative;
+    padding: 0 30px; /* Add horizontal padding */
 }
 
 nav.taakbalk ul {
@@ -25,6 +30,7 @@ nav.taakbalk ul {
     gap: 20px;
     padding: 0;
     margin: 0; /* Remove auto to prevent weird centering issues */
+    flex-grow: 1; /* Allow the nav items to take remaining space */
 }
 
 nav.taakbalk li {
@@ -39,13 +45,33 @@ nav.taakbalk li a {
     transition: 0.3s ease;
     text-decoration: none;
     font-size: 1.5rem;
-    font-family: "Bruno Ace", sans-serif;
+    font-family: "Eurostile";
     line-height: 1.5;
 }
 
 nav.taakbalk li a:hover {
     background-color: #000410;
     border-radius: 20px;
+}
+
+/* Logo/Name Section */
+.navbar-logo {
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.logo-text {
+    color: #f8edd2;
+    font-family: "Eurostile";
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* If you choose to use an image logo instead */
+.logo-image {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
 }
 
 /* Responsive Navbar */
@@ -89,10 +115,6 @@ nav.taakbalk li a:hover {
     height: auto;
     border-radius: 20px;
     box-shadow: 0 0 25px rgba(248, 237, 210, 1); /* illuminated look */
-    transition: transform 0.3s ease-in-out;
-}
-.main-image:hover {
-    transform: scale(1.05);
 }
 
 
@@ -108,12 +130,18 @@ nav.taakbalk li a:hover {
     width: 50px;
     height: 50px;
     filter: drop-shadow(0 0 5px rgba(248, 237, 210, 0.5));
+    transition: all 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(248, 237, 210, 0.8));
 }
 
 .text-section {
     background-color: #121a2e; /* slightly lighter for contrast */
     color: #f8edd2;
-    font-family: "Bruno Ace", sans-serif;
+    font-family: "Eurostile";
     padding: 35px;
     border-radius: 40px;
     max-width: 700px;
@@ -152,9 +180,254 @@ nav.taakbalk li a:hover {
     margin-top: 20px;
     border-radius: 20px;
     box-shadow: 0 0 25px rgba(248, 237, 210, 1);
-    transition: transform 0.3s ease-in-out;
 }
 
-.below-text-image:hover {
-    transform: scale(1.05);
+/* Visual Sheet Description */
+.visual-sheet-description {
+    background: rgba(14, 21, 40, 0.8);
+    color: #f8edd2;
+    font-family: "Eurostile";
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(248, 237, 210, 0.3);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(248, 237, 210, 0.2);
+}
+
+.visual-sheet-description h3 {
+    color: #f8edd2;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 2px solid rgba(248, 237, 210, 0.3);
+    padding-bottom: 10px;
+}
+
+.visual-sheet-description p {
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Sprite Showcase */
+.sprite-showcase {
+    margin-top: 30px;
+}
+
+.sprite-showcase h3 {
+    color: #f8edd2;
+    font-family: "Eurostile";
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(248, 237, 210, 0.3);
+    padding-bottom: 10px;
+}
+
+.sprite-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.sprite-item {
+    background: #0e1528;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(248, 237, 210, 0.6);
+    min-width: 150px;
+    max-width: 200px;
+}
+
+.sprite-image {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: rgba(0, 4, 16, 0.3);
+    border: 2px dashed rgba(248, 237, 210, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sprite-label {
+    color: #f8edd2;
+    font-family: "Eurostile";
+    font-size: 0.9rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .visual-sheet-description {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    
+    .visual-sheet-description h3 {
+        font-size: 1.1rem;
+    }
+    
+    .visual-sheet-description p {
+        font-size: 0.9rem;
+    }
+    
+    .sprite-gallery {
+        gap: 15px;
+    }
+    
+    .sprite-item {
+        min-width: 120px;
+        max-width: 150px;
+        padding: 12px;
+    }
+    
+    .sprite-image {
+        height: 100px;
+    }
+    
+    .sprite-label {
+        font-size: 0.8rem;
+    }
+}
+
+/* Project Info Box - Now Static */
+.project-info-box {
+    background: #0e1528;
+    border-radius: 25px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(248, 237, 210, 0.8);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.project-info-box:hover {
+    transform: scale(1.02);
+}
+
+.project-info-box h3 {
+    color: #f8edd2;
+    font-family: "Eurostile";
+    font-size: 1.4rem;
+    margin: 0 0 15px 0;
+    text-align: center;
+    border-bottom: 2px solid rgba(248, 237, 210, 0.3);
+    padding-bottom: 10px;
+}
+
+.project-info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 4, 16, 0.5);
+    padding: 8px 12px;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+.info-item:hover {
+    background: rgba(0, 4, 16, 0.8);
+}
+
+.info-label {
+    color: #f8edd2;
+    font-family: "Eurostile";
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.info-value {
+    color: #f8edd2;
+    font-family: "Eurostile";
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Project Links Section */
+.project-links {
+    background: rgba(0, 4, 16, 0.5);
+    padding: 8px 12px;
+    border-radius: 0 0 15px 15px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(248, 237, 210, 0.2);
+}
+
+.project-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.project-icon img {
+    width: 35px;
+    height: 35px;
+    filter: drop-shadow(0 0 5px rgba(248, 237, 210, 0.5));
+    transition: all 0.3s ease;
+}
+
+.project-icon:hover img {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px rgba(248, 237, 210, 0.8));
+}
+
+/* Right Side Section Container */
+.right-side-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+/* Responsive adjustments for project info box */
+@media (max-width: 1200px) {
+    .project-info-box {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-info-box {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+    
+    .project-info-box h3 {
+        font-size: 1.2rem;
+    }
+    
+    .info-label, .info-value {
+        font-size: 0.8rem;
+    }
+    
+    .info-item {
+        padding: 6px 10px;
+    }
+    
+    .project-links {
+        padding: 6px 10px;
+    }
+    
+    .project-icon img {
+        width: 30px;
+        height: 30px;
+    }
 }

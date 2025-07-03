@@ -13,7 +13,7 @@ function toggleEmailBox() {
 }
 
 function copyEmail() {
-    const emailText = 'tyler.vermeulen@example.com';
+    const emailText = 'tylervermeulen@outlook.com';
     navigator.clipboard.writeText(emailText).then(() => {
         const copyBtn = document.querySelector('.copy-btn');
         const originalText = copyBtn.textContent;

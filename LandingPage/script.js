@@ -1,4 +1,3 @@
-// Initialize Swiper
 const swiper = new Swiper('.swiper', {
   loop: true,
   pagination: {
@@ -17,10 +16,4 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-// Function to update project name
-function updateProjectName(name) {
-  document.getElementById('projectName').textContent = name;
-}
 
-// Example usage - you can call this function to change the project name
-// updateProjectName("Your Project Name Here");
