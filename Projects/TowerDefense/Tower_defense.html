@@ -7,9 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Page</title>
     <link rel="stylesheet" href="TowerDefenseStyle.css">
-</head>
-<body>
-    <nav class="taakbalk">
+    <script src="Tower_defensescript.js" defer></script>
+</head>    <body>
+        <!-- Night Sky Stars Background -->
+        <div class="stars-container" id="stars-container"></div>
+        <!-- Moon -->
+        <div class="moon"></div>
+        
+        <nav class="taakbalk">
         <div class="navbar-logo">
             <span class="logo-text">Tyler Vermeulen</span>
         </div>
@@ -24,10 +29,10 @@
         <div class="text-section">
             <h2>Tower Defense</h2>
             <p>
-                In this project which I have called Tower Defense, we were ordered to make — you guessed it — a tower defense game.
+                In this project which I have called Tower Defense, we were ordered to make you guessed it a tower defense game.
             </p>
             <p>
-                As you can see in the documentation, I only spent around 50% of the time programming, the other 50% was spent on making art for the game. this was due to me wanting to spend time experimenting with art implementation and art creation.
+                As you can see in the documentation, I only spent around 50% of the time programming, the other 50% was spent on making art for the game. This was due to me wanting to spend time experimenting with art implementation and art creation.
             </p>
             <p>
                 So in terms of programming, it really is the minimum for the assignment. However, every single sprite and art piece (except the skeleton enemy) was created by me.
@@ -36,78 +41,92 @@
                 When talking about some of the individual features, I'll explain the targeting of the towers using a visual sheet.
             </p>
 
-            <!-- Extra image BELOW the text -->
+            <!-- Development Process Section -->
             <div class="text-side-image">
-                <img src="Images/TowerDefenseVisualSheet.png" alt="Extra Image" class="below-text-image" />
+                <img src="Images/TowerDefenseVisualSheet.png" alt="Tower Defense Visual Sheet" class="below-text-image" />
                 
-                <!-- Sprite showcase section -->
-                <div class="sprite-showcase">
-                    <h3>Custom Sprites</h3>
+                <!-- Development highlights section -->
+                <div class="development-showcase">
+                    <h3>Development Highlights</h3>
                     
-                    <!-- Text box about the sprites -->
-                    <div class="visual-sheet-description">
-                        <h4>Sprite Creation Process</h4>
+                    <!-- Feature showcase section -->
+                    <div class="feature-showcase">
+                        <h4>Custom Sprite Creation</h4>
                         <p>
                             Each tower sprite was carefully designed to represent different elemental themes and combat roles. I focused on creating distinct visual identities for each tower type while maintaining a cohesive art style throughout the game.
                         </p>
                         <p>
-                            The Desert Tower was inspired by the world of League of Legends, specifically the Shuriman desert. The Ice Tower was a design I have had in my head for a long time, and this assignment gave me the perfect opportunity to bring it to life. The Wizard Tower was an obvious choice. after all, what tower defense game would be complete without a wizard tower?
+                            The Desert Tower was inspired by the world of League of Legends, specifically the Shuriman desert. The Ice Tower was a design I have had in my head for a long time, and this assignment gave me the perfect opportunity to bring it to life. The Wizard Tower was an obvious choice - after all, what tower defense game would be complete without a wizard tower?
                         </p>
                         <p>
-                            All sprites were hand-drawn using the drawing app Krita.
+                            All sprites were hand-drawn using the drawing app Krita, focusing on creating unique visual identities while maintaining gameplay clarity.
                         </p>
                     </div>
                     
-                    <div class="sprite-gallery">
-                        <div class="sprite-item">
-                            <img src="Images/Desert Tower.png" alt="Sprite 1" class="sprite-image" />
-                            <p class="sprite-label">Desert Tower</p>
+                    <div class="feature-gallery">
+                        <div class="feature-item">
+                            <div class="feature-placeholder">
+                                <img src="Images/Desert Tower.png" alt="Desert Tower" class="feature-image" />
+                            </div>
+                            <p class="feature-label">Desert Tower</p>
                         </div>
-                        <div class="sprite-item">
-                            <img src="Images/Ice Tower.png" alt="Sprite 2" class="sprite-image" />
-                            <p class="sprite-label">Ice Tower</p>
+                        <div class="feature-item">
+                            <div class="feature-placeholder">
+                                <img src="Images/Ice Tower.png" alt="Ice Tower" class="feature-image" />
+                            </div>
+                            <p class="feature-label">Ice Tower</p>
                         </div>
-                        <div class="sprite-item">
-                            <img src="Images/Wizard Tower.png" alt="Sprite 3" class="sprite-image" />
-                            <p class="sprite-label">Wizard Tower</p>
+                        <div class="feature-item">
+                            <div class="feature-placeholder">
+                                <img src="Images/Wizard Tower.png" alt="Wizard Tower" class="feature-image" />
+                            </div>
+                            <p class="feature-label">Wizard Tower</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="right-side-section">
-            <!-- Project Info Box -->
-            <div class="project-info-box">
-                <h3>Tower Defense</h3>
-                <div class="project-info-details">
-                    <div class="info-item">
-                        <span class="info-label">🎮 Engine:</span>
-                        <span class="info-value">Unity Engine</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">⏱️ Duration:</span>
-                        <span class="info-value">3 months</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">📅 Year:</span>
-                        <span class="info-value">2024</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">🎯 Focus:</span>
-                        <span class="info-value">Art & Design</span>
-                    </div>
+        <!-- Info box section -->
+        <div class="info-section">
+            <div class="info-box">
+                <h3>Project Information</h3>
+                <div class="info-item">
+                    <span class="info-label">Engine:</span>
+                    <span class="info-value">Unity 3D</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/TylerVermeulen/Tower-Defense" class="project-icon">
-                        <img src="/About me/Images/github_logo.png" alt="GitHub">
-                    </a>
+                <div class="info-item">
+                    <span class="info-label">Language:</span>
+                    <span class="info-value">C#</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Development Time:</span>
+                    <span class="info-value">3 months</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Team Size:</span>
+                    <span class="info-value">Solo Project</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Platform:</span>
+                    <span class="info-value">PC/Mac</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Focus:</span>
+                    <span class="info-value">Art & Design</span>
                 </div>
             </div>
 
-            <!-- Main Project Image -->
-            <div class="image-section">
-                <img src="/LandingPage/Images/towerdef.png" alt="Project Image" class="main-image" />
+            <!-- Project image -->
+            <div class="main-image">
+                <img src="/LandingPage/Images/towerdef.png" alt="Tower Defense Game Screenshot" />
+            </div>
+
+            <!-- GitHub link section -->
+            <div class="github-links">
+                <a href="https://github.com/TylerVermeulen/Tower-Defense" class="github-button" target="_blank">
+                    View on GitHub
+                </a>
             </div>
         </div>
     </div>

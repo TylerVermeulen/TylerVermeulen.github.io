@@ -1,5 +1,6 @@
 body {
-    background-color: #000410 !important;
+    background: linear-gradient(180deg, #000000 0%, #020207 50%, #040409 100%) !important;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
 }
@@ -97,89 +98,241 @@ nav.taakbalk li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
-    padding: 40px 20px;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+    min-height: 100vh;
+    color: #f8edd2;
+    font-family: "Eurostile";
 }
 
-/* Left Side: Image + Icons */
-.image-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.main-image {
-    width: 350px; /* increased from 300px */
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 0 25px rgba(248, 237, 210, 1); /* illuminated look */
-}
-
-
-/* Icon row under the image */
-.icon-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
-.icon {
-    width: 50px;
-    height: 50px;
-    filter: drop-shadow(0 0 5px rgba(248, 237, 210, 0.5));
-    transition: all 0.3s ease;
-}
-
-.icon:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 10px rgba(248, 237, 210, 0.8));
+.content-container.inverted {
+    flex-direction: row-reverse;
 }
 
 .text-section {
-    background-color: #121a2e; /* slightly lighter for contrast */
+    flex: 1;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(14, 21, 40, 0.8);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(248, 237, 210, 0.2);
+}
+
+.text-section h2 {
+    color: #f8edd2;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Eurostile";
+}
+
+.text-section p {
+    color: #f8edd2;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-family: "Eurostile";
+}
+
+.info-section {
+    flex: 0 0 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-box {
+    background: rgba(14, 21, 40, 0.9);
+    border-radius: 15px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(248, 237, 210, 0.2);
+}
+
+.info-box h3 {
+    color: #f8edd2;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Eurostile";
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(248, 237, 210, 0.1);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.info-label {
+    color: #f8edd2;
+    font-weight: bold;
+    font-family: "Eurostile";
+}
+
+.info-value {
     color: #f8edd2;
     font-family: "Eurostile";
-    padding: 35px;
-    border-radius: 40px;
-    max-width: 700px;
-    flex: 1;
-    min-width: 300px;
-    line-height: 1.8; /* better readability */
-    font-size: 1.1rem;
-    box-shadow: 0 0 25px rgba(248, 237, 210, 0.6);
 }
 
-/* Optional: Improve heading readability */
-.text-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #fff6d5;
-}
-
-/* Optional: Make bullet lists easier to scan */
-.text-section ul {
-    margin-top: 15px;
-    padding-left: 20px;
-}
-
-.text-section li {
-    margin-bottom: 8px;
-}
-/* Extra image below text */
-.text-side-image {
-    margin-top: 30px;
+.main-image {
+    background: rgba(14, 21, 40, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(248, 237, 210, 0.2);
     text-align: center;
 }
 
+.main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Side Image Section */
+.text-side-image {
+    margin-top: 30px;
+}
+
 .below-text-image {
-    width: 95%;
-    max-width: 700px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Development Showcase Section */
+.development-showcase {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(14, 21, 40, 0.6);
+    border-radius: 12px;
+    border: 1px solid rgba(248, 237, 210, 0.1);
+}
+
+.development-showcase h3 {
+    color: #f8edd2;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Eurostile";
+}
+
+.feature-showcase {
+    margin-bottom: 25px;
+}
+
+.feature-showcase h4 {
+    color: #f8edd2;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-family: "Eurostile";
+}
+
+.feature-showcase p {
+    color: #f8edd2;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-family: "Eurostile";
+}
+
+.feature-gallery {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
     margin-top: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 25px rgba(248, 237, 210, 1);
+}
+
+.feature-item {
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+}
+
+.feature-placeholder {
+    width: 80px;
+    height: 80px;
+    background: rgba(248, 237, 210, 0.1);
+    border: 2px solid rgba(248, 237, 210, 0.3);
+    border-radius: 12px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f8edd2;
+    font-size: 0.8rem;
+    font-family: "Eurostile";
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.feature-placeholder:hover {
+    background: rgba(248, 237, 210, 0.2);
+    border-color: rgba(248, 237, 210, 0.5);
+    transform: translateY(-2px);
+}
+
+.feature-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.feature-label {
+    color: #f8edd2;
+    font-size: 0.9rem;
+    font-family: "Eurostile";
+    margin: 0;
+}
+
+/* GitHub Links Section */
+.github-links {
+    background: rgba(14, 21, 40, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(248, 237, 210, 0.2);
+    text-align: center;
+}
+
+.github-button {
+    display: inline-block;
+    color: #f8edd2;
+    text-decoration: none;
+    font-family: "Eurostile";
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, rgba(248, 237, 210, 0.1) 0%, rgba(248, 237, 210, 0.05) 100%);
+    border: 2px solid rgba(248, 237, 210, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(248, 237, 210, 0.1);
+}
+
+.github-button:hover {
+    background: linear-gradient(135deg, rgba(248, 237, 210, 0.2) 0%, rgba(248, 237, 210, 0.1) 100%);
+    border-color: rgba(248, 237, 210, 0.5);
+    transform: translateY(-3px);
+    color: #f8edd2;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(248, 237, 210, 0.3);
 }
 
 /* Visual Sheet Description */
@@ -429,5 +582,132 @@ nav.taakbalk li a:hover {
     .project-icon img {
         width: 30px;
         height: 30px;
+    }
+}
+
+/* Night Sky Star Effect */
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+.star.small {
+    width: 1px;
+    height: 1px;
+    opacity: 0.8;
+}
+
+.star.medium {
+    width: 2px;
+    height: 2px;
+    opacity: 0.9;
+    box-shadow: 0 0 6px #ffffff;
+}
+
+.star.large {
+    width: 3px;
+    height: 3px;
+    opacity: 1;
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+}
+
+.star.shooting {
+    width: 2px;
+    height: 2px;
+    background: linear-gradient(45deg, #ffffff, transparent);
+    border-radius: 0;
+    animation: shooting-star 2s linear infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes shooting-star {
+    0% {
+        transform: translateX(-100px) translateY(-100px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100vw) translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Moon Effect */
+.moon {
+    position: fixed;
+    top: 8%;
+    left: 12%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #f8f8f0 0%, #e8e8d8 40%, #d0d0c0 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 20px rgba(248, 248, 240, 0.4),
+        0 0 40px rgba(248, 248, 240, 0.2),
+        inset -8px -8px 0px rgba(200, 200, 180, 0.3);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Moon craters for realistic effect */
+.moon::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    width: 8px;
+    height: 8px;
+    background: rgba(180, 180, 160, 0.4);
+    border-radius: 50%;
+    box-shadow: 
+        -15px 10px 0 -2px rgba(180, 180, 160, 0.3),
+        10px -5px 0 -3px rgba(180, 180, 160, 0.2),
+        -5px -10px 0 -1px rgba(180, 180, 160, 0.25);
+}
+
+/* Responsive moon sizing */
+@media (max-width: 768px) {
+    .moon {
+        width: 60px;
+        height: 60px;
+        top: 6%;
+        left: 8%;
+    }
+}
+
+@media (max-width: 480px) {
+    .moon {
+        width: 45px;
+        height: 45px;
+        top: 5%;
+        left: 6%;
     }
 }
