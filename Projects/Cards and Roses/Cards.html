@@ -30,16 +30,16 @@
         <div class="text-section">
             <h2>Cards and Roses</h2>
             <p>
-                Cards and Roses is an immersive card-based adventure game developed in Unity Engine. This project showcases my skills in game mechanics design, user interface development, and creating engaging gameplay systems.
+                Cards and Roses is a card battle game developed in Unity Engine. This project showcases my skills in game mechanics design, user interface development, and designing engaging gameplay systems.
             </p>
             <p>
-                The game features strategic card gameplay combined with narrative elements, where players navigate through various challenges using a carefully crafted deck system. I focused on creating intuitive game mechanics and polished user experience.
+                The game features strategic card gameplay combined with narrative elements, where players navigate through various challenges using a carefully randomized deck system. I focused on creating intuitive game mechanics and polished user experience.
             </p>
             <p>
-                This project allowed me to explore advanced Unity features including UI system design, game state management, and interactive card mechanics. The rose theme was woven throughout the visual design to create a cohesive aesthetic experience.
+                This project allowed me to really learn unity since before this i had only done 1 small project which did not require much technical prowess so this was a big step. The game had a visual theme centered around greek mythology specifically the story of Eros and Psyche.
             </p>
             <p>
-                Key achievements include implementing complex card interactions, designing responsive UI elements, and creating smooth gameplay flow that keeps players engaged throughout their journey.
+                Key achievements include creating the entire deck system, all of the logic surrounding how when and where you can play cards, incorporating the artist's art into the game, designing the gameplay with the game artists, giving every card their own data to be used for the other features and lastly i created most of the enemy ai which was sadly not finished in time due to how complicated the mechanics were and my lack of knowledge in ai creation at the time.
             </p>
 
             <!-- Development Process Section -->
@@ -52,34 +52,424 @@
                     <div class="feature-showcase">
                         <h4>Key Features</h4>
                         <p>
-                            The development process focused on creating engaging card-based mechanics that feel intuitive and rewarding. Using Unity's powerful systems, I implemented complex card interactions and smooth gameplay flow.
+                            The development process focused on creating the mechanics required for a card game. Using Unity's systems such as interactive objects, I implemented complex card mechanics and smooth gameplay flow.
                         </p>
                         <p>
-                            The rose-themed visual design was carefully integrated throughout the game, from card artwork to UI elements, creating a cohesive and atmospheric experience that enhances the gameplay narrative.
+                            The ancient Greek themed visual design was carefully integrated throughout the game, from card artwork to UI elements, creating a cohesive and atmospheric experience that enhances the gameplay narrative.
                         </p>
                         <p>
                             Special attention was paid to user experience design, ensuring that card mechanics are easy to learn but offer depth for strategic gameplay, appealing to both casual and experienced players.
                         </p>
+                        <p>
+                            The project ended up not being finished due to the time constraints of the assignment, but it served as a valuable learning experience in game development, project management, and teamwork.
+                        </p>
                     </div>
                     
-                    <div class="feature-gallery">
-                        <div class="feature-item">
-                            <div class="feature-placeholder">
-                                <span>Card Mechanics</span>
+                    <div class="script-showcase">
+                        <div class="script-item">
+                            <h4>Card Deck Management</h4>
+                            <div class="code-snippet">
+                                <div class="code-preview">
+                                    <pre><code>public class PlayerDeck : MonoBehaviour
+{
+    [SerializeField]private List&lt;CardSettings&gt; deck;
+    List&lt;CardSettings&gt; runDeck = new List&lt;CardSettings&gt;();
+    
+    void Start()
+    {
+        Shuffle(deck);
+        StartCoroutine(StartGame());
+    }
+    
+    public void DrawCard(int cardIndex)
+    {   
+        var NewCard = Instantiate(CardToHand);
+        // ... rest of implementation
+    }
+}</code></pre>
+                                </div>
+                                <div class="code-full" style="display: none;">
+                                    <pre><code>public class PlayerDeck : MonoBehaviour
+{
+    public GameObject CardPrefab;
+    public GameObject Hand;
+    [SerializeField]private List&lt;CardSettings&gt; deck;
+    List&lt;CardSettings&gt; runDeck = new List&lt;CardSettings&gt;();
+    public int beginningHand = 0;
+    private List&lt;GameObject&gt; cardsInHand = new List&lt;GameObject&gt;();
+    public GameObject CardToHand;
+    public GameObject cardInDeck1;
+    public GameObject cardInDeck2;
+    public GameObject cardInDeck3;
+    public GameObject cardInDeck4;
+
+    void Start()
+    {
+        Shuffle(deck);
+        StartCoroutine(StartGame());
+    }
+    
+    private void Update()
+    {
+        DeckVisuals();
+    }
+    
+    public void DrawCard(int cardIndex)
+    {   
+        var NewCard = Instantiate(CardToHand);
+        NewCard.transform.position = new Vector3(-100, 0, 0);
+        cardsInHand.Add(NewCard);
+        DisplayCard dcs = NewCard.GetComponent&lt;DisplayCard&gt;();
+        dcs.Init(runDeck[cardIndex]);
+        runDeck.RemoveAt(cardIndex);
+    }
+
+    public void Shuffle(List&lt;CardSettings&gt; deck)
+    {
+        runDeck = deck.OrderBy(x =&gt; Random.value).ToList();
+    }
+
+    IEnumerator StartGame()
+    {
+        for (int i = 0; i &lt; beginningHand; i++)
+        {
+            DrawCard(0);
+            yield return new WaitForSeconds(1);
+        }
+    }
+    
+    public void DeckVisuals()
+    {
+        if (runDeck.Count &lt; 20) cardInDeck1.SetActive(false);
+        if (runDeck.Count &lt; 13) cardInDeck2.SetActive(false);
+        if (runDeck.Count &lt; 7) cardInDeck3.SetActive(false);
+        if (runDeck.Count &lt; 1) cardInDeck4.SetActive(false);
+    }
+}</code></pre>
+                                </div>
+                                <button class="expand-btn" onclick="toggleCode(this)">Expand Code</button>
                             </div>
-                            <p class="feature-label">Deck Building</p>
+                            <p class="script-description">Core deck management system handling card drawing, shuffling, and visual updates</p>
                         </div>
-                        <div class="feature-item">
-                            <div class="feature-placeholder">
-                                <span>UI Design</span>
+                        
+                        <div class="script-item">
+                            <h4>Card Display System</h4>
+                            <div class="code-snippet">
+                                <div class="code-preview">
+                                    <pre><code>public class DisplayCard : MonoBehaviour
+{
+    public TextMeshProUGUI NameText;
+    public TextMeshProUGUI PowerText;
+    public TextMeshProUGUI HealthText;
+    public TextMeshProUGUI ManaText;
+    
+    internal int health, mana, power;
+    
+    public void Init(CardSettings cardType) 
+    {
+        this.cardType = cardType;
+        ShowStats();
+    }
+    
+    // Click "Expand Code" to see full implementation
+}</code></pre>
+                                </div>
+                                <div class="code-full" style="display: none;">
+                                    <pre><code>public class DisplayCard : MonoBehaviour
+{
+    public TextMeshProUGUI NameText;
+    public TextMeshProUGUI PowerText;
+    public TextMeshProUGUI HealthText;
+    public TextMeshProUGUI ManaText;
+    public Image image;
+
+    private CardSettings cardType;
+    internal int health, mana, power;
+    
+    private void Update()
+    {
+        HealthText.text = health.ToString();
+        PowerText.text = power.ToString();
+        ManaText.text = mana.ToString();
+    }
+    
+    public void Init(CardSettings cardType) 
+    {
+        this.cardType = cardType;
+        ShowStats();
+    }
+  
+    void ShowStats()
+    {
+        NameText.text = cardType.MName;
+        power = cardType.Power;
+        health = cardType.Health;
+        mana = cardType.ManaCost;
+        image.sprite = cardType.Image; 
+    }
+}</code></pre>
+                                </div>
+                                <button class="expand-btn" onclick="toggleCode(this)">Expand Code</button>
                             </div>
-                            <p class="feature-label">User Interface</p>
+                            <p class="script-description">Card data management and UI display system</p>
                         </div>
-                        <div class="feature-item">
-                            <div class="feature-placeholder">
-                                <span>Theme Design</span>
+                        
+                        <div class="script-item">
+                            <h4>Enemy AI Behavior</h4>
+                            <div class="code-snippet">
+                                <div class="code-preview">
+                                    <pre><code>public class EnemyAI : MonoBehaviour
+{
+    internal List&lt;GameObject&gt; EnemyCardsinHand = new List&lt;GameObject&gt;();
+    internal List&lt;GameObject&gt; EnemyCardsinRanged = new List&lt;GameObject&gt;();
+    internal List&lt;GameObject&gt; EnemyCardsinMelee = new List&lt;GameObject&gt;();
+
+    private void ChooseRangeCard()
+    {
+        if (EnemyCardsinHand.Count &gt; 0)
+        {
+            chosencard = EnemyCardsinHand[0];
+            EnemyCardsinHand.RemoveAt(0);
+            // ... card selection and positioning logic
+        }
+    }
+    
+    IEnumerator AIBehaviour()
+    {
+        // Complex AI decision making system
+        // Click "Expand Code" to see full implementation
+    }
+}</code></pre>
+                                </div>
+                                <div class="code-full" style="display: none;">
+                                    <pre><code>public class EnemyAI : MonoBehaviour
+{
+    internal List&lt;GameObject&gt; EnemyCardsinHand= new List&lt;GameObject&gt;();
+    internal List&lt;GameObject&gt; EnemyCardsinRanged = new List&lt;GameObject&gt;();
+    internal List&lt;GameObject&gt; EnemyCardsinMelee = new List&lt;GameObject&gt;();
+
+    [SerializeField]private int numberofactions;
+
+    private GameObject movedrangecard;
+    private GameObject movedmeleecard;
+    private GameObject chosencard;
+
+    [SerializeField]private GameObject enemyrange1;
+    [SerializeField]private GameObject enemyrange2;
+    [SerializeField]private GameObject enemymelee1;
+    [SerializeField]private GameObject enemymelee2;
+    [SerializeField]private GameObject enemymelee3;
+    [SerializeField]private GameObject enemygrave;
+    [SerializeField]private GameObject enemydeck;
+    [SerializeField]private GameObject Turnsystem;
+
+    private TurnSystem turn;
+    private EnemyDeck deck;
+    private Draggable drag;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        turn = Turnsystem.GetComponent&lt;TurnSystem&gt;();
+        deck = enemydeck.GetComponent&lt;EnemyDeck&gt;();
+
+        TurnSystem.OnEndTurn += handleOnEndTurn;
+    }
+
+    private void ChooseRangeCard()
+    {
+        if (EnemyCardsinHand.Count &gt; 0)
+        {
+            if (EnemyCardsinHand[0] != null)
+            {
+                chosencard = EnemyCardsinHand[0];
+                EnemyCardsinHand.RemoveAt(0);
+                movedrangecard = chosencard;
+                drag = movedrangecard.GetComponent&lt;Draggable&gt;();
+            }
+            else
+            {
+                deck.DrawCard(0);
+                Debug.Log("issue in the skill");
+            }
+        }
+    }
+    private void MoveCardToRange()
+    {
+        int random = Randomizer(1, 6);
+        //bool below3;
+        
+        /*if (random &lt; 3)
+        {
+            below3 = true;
+        } else if (random &gt; 3)
+        {
+            below3 = false;
+        }*/
+        if (random &lt; 3 &amp;&amp; enemyrange1.transform.childCount == 0)
+        {
+            movedrangecard.transform.SetParent(enemyrange1.transform);
+            movedrangecard.transform.localPosition = new Vector3(0,0,0);
+            movedrangecard.GetComponent&lt;Cardback&gt;().TurnCard(false);
+            movedrangecard.transform.tag = "EnemyRangeCard1";
+            EnemyCardsinRanged.Add(movedrangecard);
+            Debug.Log("range1");
+        }
+        else if ((random &gt; 3  /*below3 == true*/) &amp;&amp; enemyrange2.transform.childCount == 0)
+        {
+            movedrangecard.transform.SetParent(enemyrange2.transform);
+            movedrangecard.transform.localPosition = new Vector3(0, 0, 0);
+            movedrangecard.GetComponent&lt;Cardback&gt;().TurnCard(false);
+            movedrangecard.transform.tag = "EnemyRangeCard2";
+            EnemyCardsinRanged.Add(movedrangecard);
+            Debug.Log("range2");
+        }
+        else
+        {
+            movedrangecard.transform.SetParent(enemygrave.transform);
+            movedrangecard.transform.localPosition = new Vector3(0, 0, 0);
+            Debug.Log("skill issue");
+        }
+    }
+
+    private void ChooseMeleeCard() // Chooses a Range card to move to Melee
+    {
+        int number = Randomizer(1, 2);
+        int number2 = Randomizer(1, 2);
+        int spot1 = 0;
+        int spot2 = 1;
+        
+        
+        if (EnemyCardsinRanged != null &amp;&amp; EnemyCardsinRanged.Count &gt; 0)
+        {
+            if (number == 1 &amp;&amp; drag.turnsexisted == 1)
+            {
+                chosencard = EnemyCardsinRanged[spot1];
+                EnemyCardsinRanged.RemoveAt(spot1);
+                movedmeleecard = chosencard;
+                drag = movedmeleecard.GetComponent&lt;Draggable&gt;();
+            } else if (number == 2 &amp;&amp; drag.turnsexisted == 1)
+            {
+                chosencard = EnemyCardsinRanged[spot2];
+                EnemyCardsinRanged.RemoveAt(spot2);
+                movedmeleecard = chosencard;
+                drag = movedmeleecard.GetComponent&lt;Draggable&gt;();
+            }
+        } 
+        else 
+        {
+            if (number2 == 1 &amp;&amp; EnemyCardsinHand != null)
+            {
+                ChooseRangeCard();
+                MoveCardToRange();
+            }
+            else if (number2 == 2 &amp;&amp; EnemyCardsinHand.Count &lt; 7)
+            {
+                deck.DrawCard(0);
+            }
+        }
+    }
+    private void MoveCardToMelee() // Moves the chosen card to Melee
+    {
+        int number = Randomizer(1, 6);
+        //bool under4;
+       /* if (number &lt; 4)
+        {
+            under4 = false;
+        }
+        else if (number &gt; 4)
+        {
+            under4 = true;
+        }*/
+        if (number &lt; 2 &amp;&amp; enemymelee1.transform.childCount == 0)
+        {
+            movedmeleecard.transform.SetParent(enemymelee1.transform);
+            movedmeleecard.transform.localPosition = new Vector3(0, 0, 0);
+            movedmeleecard.GetComponent&lt;Cardback&gt;().TurnCard(false);
+            movedmeleecard.transform.tag = "EnemyMeleeCard1";
+            EnemyCardsinMelee.Add(movedmeleecard);
+            Debug.Log("meelee1");
+        }
+        else if ((number &gt; 2  /*under4 == true*/) &amp;&amp; number &lt; 4 &amp;&amp; enemymelee2.transform.childCount == 0)
+        {
+            movedmeleecard.transform.SetParent(enemymelee2.transform);
+            movedmeleecard.transform.localPosition = new Vector3(0, 0, 0);
+            movedmeleecard.GetComponent&lt;Cardback&gt;().TurnCard(false);
+            movedmeleecard.transform.tag = "EnemyMeleeCard2";
+            EnemyCardsinMelee.Add(movedmeleecard);
+            Debug.Log("meelee2");
+        }
+        else if (number &gt; 4 &amp;&amp; enemymelee3.transform.childCount == 0)
+        {
+            movedmeleecard.transform.SetParent(enemymelee3.transform);
+            movedmeleecard.transform.localPosition = new Vector3(0, 0, 0);
+            movedmeleecard.GetComponent&lt;Cardback&gt;().TurnCard(false);
+            movedmeleecard.transform.tag = "EnemyMeleeCard3";
+            EnemyCardsinMelee.Add(movedmeleecard);
+            Debug.Log("meelee3");
+        }
+        else
+        {
+            movedmeleecard.transform.SetParent(enemygrave.transform);
+            movedmeleecard.transform.localPosition = new Vector3(0, 0, 0);
+            Debug.Log("skill issue");
+        }
+    }
+    private int Randomizer(int Min, int Max)
+    {
+        int number = UnityEngine.Random.Range(Min, Max);
+        return number;
+    }
+
+    IEnumerator AIBehaviour()
+    {
+        for (int i = 0; i &lt; numberofactions; i++)
+        {
+            int number = Randomizer(1, 4);
+            yield return new WaitForSeconds(2);
+            if (EnemyCardsinRanged.Count == 0)
+            {
+                ChooseRangeCard();
+                if (movedrangecard != null)
+                {
+                    MoveCardToRange();
+                }
+                else
+                {
+                    deck.DrawCard(0);
+                }
+            }
+            else {
+                ChooseMeleeCard();
+                if (movedmeleecard != null)
+                {
+                    MoveCardToMelee();
+                }
+                else
+                {
+                    deck.DrawCard(0);
+                }
+            } 
+        }
+        turn.EndyourOponentTurn();
+    }
+
+    void handleOnEndTurn() 
+    {
+        if (turn.isYourTurn == false)
+        {
+            StartCoroutine(AIBehaviour());
+        }
+        else if (turn.isYourTurn == true)
+        {
+            StopCoroutine(AIBehaviour());
+        }
+    }
+}</code></pre>
+                                </div>
+                                <button class="expand-btn" onclick="toggleCode(this)">Expand Code</button>
                             </div>
-                            <p class="feature-label">Visual Identity</p>
+                            <p class="script-description">Complex AI system handling enemy card placement, turn-based decision making, and strategic positioning</p>
                         </div>
                     </div>
                 </div>
@@ -92,11 +482,11 @@
                 <h3>Project Information</h3>
                 <div class="info-item">
                     <span class="info-label">Engine:</span>
-                    <span class="info-value">Unity 3D</span>
+                    <span class="info-value">Unity 2D</span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">Language:</span>
-                    <span class="info-value">C#</span>
+                    <span class="info-value">Unity C#</span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">Development Time:</span>
@@ -104,15 +494,19 @@
                 </div>
                 <div class="info-item">
                     <span class="info-label">Team Size:</span>
-                    <span class="info-value">Solo Project</span>
+                    <span class="info-value">4 devs 6 artists</span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">Platform:</span>
-                    <span class="info-value">PC/Mac</span>
+                    <span class="info-value">PC</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Focus:</span>
+                    <span class="info-value">Gameplay Mechanics</span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">Status:</span>
-                    <span class="info-value">Completed</span>
+                    <span class="info-value">Abandoned</span>
                 </div>
             </div>
 
@@ -123,7 +517,7 @@
 
             <!-- GitHub link section -->
             <div class="github-links">
-                <a href="https://github.com/TylerVermeulen/Cards-and-Roses" class="github-button" target="_blank">
+                <a href="https://github.com/Catmanjo/BOM4-Mythe/tree/Develop" class="github-button" target="_blank">
                     View on GitHub
                 </a>
             </div>
