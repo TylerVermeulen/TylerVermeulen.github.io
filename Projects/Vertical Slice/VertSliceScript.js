@@ -47,5 +47,28 @@ function createShootingStar() {
     }, 2000);
 }
 
+// Code showcase toggle functionality
+function toggleCode(button) {
+    const codeSnippet = button.parentElement;
+    const previewDiv = codeSnippet.querySelector('.code-preview');
+    const fullDiv = codeSnippet.querySelector('.code-full');
+    
+    if (fullDiv.style.display === 'none' || fullDiv.style.display === '') {
+        // Expanding to show full code
+        previewDiv.style.display = 'none';
+        fullDiv.style.display = 'block';
+        button.textContent = 'Collapse Code';
+        button.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a5a)';
+        button.style.color = '#ffffff';
+    } else {
+        // Collapsing to show preview
+        previewDiv.style.display = 'block';
+        fullDiv.style.display = 'none';
+        button.textContent = 'Expand Code';
+        button.style.background = 'linear-gradient(135deg, #f8edd2, #e6d5a8)';
+        button.style.color = '#0a0f1c';
+    }
+}
+
 // Initialize stars when page loads
 document.addEventListener('DOMContentLoaded', createStars);

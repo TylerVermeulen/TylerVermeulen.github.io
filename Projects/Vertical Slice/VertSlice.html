@@ -30,16 +30,22 @@
         <div class="text-section">
             <h2>Vertical Slice</h2>
             <p>
-                The Vertical Slice project represents a comprehensive game development experience showcasing a complete gameplay loop from concept to execution. This project demonstrates my ability to create polished, engaging game mechanics within a focused scope.
+                The Vertical Slice project represents a comprehensive game development experience showcasing what its like to develop a full gameplay experience. 
+                This project demonstrates my ability to create polished, engaging movement mechanics within a focused scope.
+                We do this through recreating a small section of Super Mario 3D World.
             </p>
             <p>
-                As a vertical slice, this project cuts deep into all aspects of game development - from core gameplay mechanics to visual design, audio integration, and user experience. The goal was to create a small but complete gaming experience that could serve as a proof of concept for larger projects.
+                As a vertical slice, 
+                this project cuts deep into all aspects of game development - from core gameplay mechanics to visual design, audio integration, and user experience. 
+                The goal was to recreate a specific segment in a video we were given beforehand.
             </p>
             <p>
-                The development process involved rapid prototyping, iterative design, and careful attention to player feedback. I focused on creating tight, responsive controls and engaging gameplay that demonstrates the potential for expansion into a full-scale game.
+                The development process involved rapid prototyping, clean art and recreating Mechanics. 
+                I focused on creating smooth, responsive controls and implementing Multiplayer.
             </p>
             <p>
-                This project highlights my skills in game design, programming, and project management, showing how I can deliver a complete, playable experience within defined constraints while maintaining high quality standards.
+                This project highlights my skills in programming, and project management, 
+                showing how I can deliver a complete, playable experience within defined time constraints while maintaining standards.
             </p>
 
             <!-- Development Process Section -->
@@ -52,34 +58,279 @@
                     <div class="feature-showcase">
                         <h4>Key Features</h4>
                         <p>
-                            The Vertical Slice showcases several core gameplay systems working in harmony. Each feature was carefully designed to contribute to the overall experience while demonstrating different aspects of game development expertise.
+                            The Vertical Slice showcases several core gameplay systems working in harmony. 
+                            Each feature was carefully designed to contribute to the overall experience while demonstrating different aspects of game development expertise.
                         </p>
                         <p>
-                            The project emphasizes rapid iteration and polish, showing how a focused development approach can yield impressive results. Every element serves the core gameplay vision while maintaining technical excellence.
+                            The project emphasizes rapid iteration and polish in order to make it as close to the video as possible, 
+                            in order to learn how to recreate complex gameplay mechanics effectively. 
+                            Every element serves the core gameplay vision while maintaining technical excellence.
                         </p>
                         <p>
-                            Special attention was paid to user feedback integration and responsive design, ensuring the game feels engaging and intuitive from the first moment of play.
+                            Special attention was paid to user testing and feedback, ensuring the game feels engaging and intuitive from the first moment of play.
                         </p>
                     </div>
                     
-                    <div class="feature-gallery">
-                        <div class="feature-item">
-                            <div class="feature-placeholder">
-                                <span>Core Mechanics</span>
+                    <div class="script-showcase">
+                        <div class="script-item">
+                            <h4>Ground Pound System</h4>
+                            <div class="code-snippet">
+                                <div class="code-preview">
+                                    <pre><code>public class GroundPound : MonoBehaviour
+{
+    [SerializeField]
+    private CharacterController characterController;
+    private float fallingSpeed;
+    private Vector3 velocity;
+    [SerializeField] private float groundpoundSpeed;
+    [SerializeField] private float normalSpeed;
+
+    void Start()
+    {
+        velocity = new Vector3(0, 0, 0);
+        fallingSpeed = GetComponent&lt;Jump&gt;().fallingspeed;
+        characterController = GetComponent&lt;CharacterController&gt;();
+    }
+    
+    // Click "Expand Code" to see full implementation
+}</code></pre>
+                                </div>
+                                <div class="code-full" style="display: none;">
+                                    <pre><code>public class GroundPound : MonoBehaviour
+{
+    [SerializeField]
+    private CharacterController characterController;
+    private float fallingSpeed;
+    private Vector3 velocity;
+    [SerializeField] private float groundpoundSpeed;
+    [SerializeField] private float normalSpeed;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        velocity = new Vector3(0, 0, 0);
+        fallingSpeed = GetComponent&lt;Jump&gt;().fallingspeed;
+        characterController = GetComponent&lt;CharacterController&gt;();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        characterController.Move(velocity);
+        if (characterController.isGrounded) 
+        {
+            velocity.y = -normalSpeed * Time.deltaTime;
+        }
+    }
+    public void Groundpound() 
+    {
+        
+        if (!characterController.isGrounded)
+        {
+            //Debug.Log("not on ground");
+            //fallingSpeed = groundpoundSpeed;
+            velocity.y = -groundpoundSpeed * Time.deltaTime;
+        }
+        
+    }
+    public void GroundPoundInput(InputAction.CallbackContext ctx)
+    {
+        if (ctx.action.phase == InputActionPhase.Performed)
+        {
+            Groundpound();
+        }
+        
+    }
+}</code></pre>
+                                </div>
+                                <button class="expand-btn" onclick="toggleCode(this)">Expand Code</button>
                             </div>
-                            <p class="feature-label">Gameplay Systems</p>
+                            <p class="script-description">Ground pound mechanic with character controller and input handling for Mario-style gameplay</p>
                         </div>
-                        <div class="feature-item">
-                            <div class="feature-placeholder">
-                                <span>Visual Design</span>
+                        
+                        <div class="script-item">
+                            <h4>Jump System</h4>
+                            <div class="code-snippet">
+                                <div class="code-preview">
+                                    <pre><code>public class Jump : MonoBehaviour
+{
+    private Vector3 velocity;
+    private CharacterController characterController;
+    private bool jumpPressed = false;
+    private bool canJump = false;
+    [SerializeField] private float fallingSpeed;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float maxForce;
+    [SerializeField] private float buttonTime = 0.3f;
+
+    public float fallingspeed
+    {
+        get { return fallingSpeed; }
+        set { fallingSpeed = value; }
+    }
+    
+    // Click "Expand Code" to see full implementation
+}</code></pre>
+                                </div>
+                                <div class="code-full" style="display: none;">
+                                    <pre><code>public class Jump : MonoBehaviour
+{
+    //private MovementT movementscript;
+    private Vector3 velocity;
+
+    private CharacterController characterController;
+
+    private bool jumpPressed = false;
+    private bool canJump = false;
+    [SerializeField] private float fallingSpeed;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float maxForce;
+    [SerializeField] private float buttonTime = 0.3f;
+
+    public float fallingspeed
+    {
+        get { return fallingSpeed; }
+        set { fallingSpeed = value; }
+    }
+    void Start()
+    {
+        characterController = GetComponent&lt;CharacterController&gt;();
+    }
+    void FixedUpdate()
+    {
+        if (jumpPressed && velocity.y < maxForce && canJump) {
+            velocity.y += jumpForce * Time.deltaTime;                 
+        }
+        
+        characterController.Move(velocity);
+
+        if (velocity.y > Physics.gravity.y && !characterController.isGrounded) { 
+            velocity.y -= fallingSpeed * Time.deltaTime;
+        }
+        if (characterController.isGrounded) {
+            velocity.y = 0f;
+            canJump = true;
+        }
+    }
+    public void JumpInput(InputAction.CallbackContext ctx)
+    {
+        if(ctx.action.phase == InputActionPhase.Started)
+        {
+            jumpPressed = true;
+            velocity.y = 0f;
+            StartCoroutine(JumpTimeUp());
+        }
+        if (ctx.action.phase == InputActionPhase.Canceled) {
+            jumpPressed = false;
+        }
+    }
+    IEnumerator JumpTimeUp() { 
+        yield return new WaitForSeconds(buttonTime);
+        jumpPressed = false;
+        canJump = false;
+    }
+}</code></pre>
+                                </div>
+                                <button class="expand-btn" onclick="toggleCode(this)">Expand Code</button>
                             </div>
-                            <p class="feature-label">Art Direction</p>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-placeholder">
-                                <span>User Experience</span>
+                            <p class="script-description">Variable height jump system with input buffering and character controller integration for precise platformer controls</p>
+                        </div>                        <div class="script-item">
+                            <h4>Character Movement System</h4>
+                            <div class="code-snippet">
+                                <div class="code-preview">
+                                    <pre><code>public class Movement : MonoBehaviour
+{
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float speed;
+    [SerializeField] private float sprintSpeed;
+
+    private Vector2 moveinput;
+    private Vector3 velocity;
+    private CharacterController controller;
+
+    void Awake()
+    {
+        controller = GetComponent&lt;CharacterController&gt;();
+    }
+
+    // Click "Expand Code" to see full implementation
+}</code></pre>
+                                </div>
+                                <div class="code-full" style="display: none;">
+                                    <pre><code>public class Movement : MonoBehaviour
+{
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float speed;
+    [SerializeField] private float sprintSpeed;
+
+    private Vector2 moveinput;
+    private Vector3 velocity;
+    private CharacterController controller;
+
+
+    /*public Vector3 Velocity
+    {
+        get { return velocity; }
+        set { velocity = value; }
+    }
+    
+    public float VelY {
+        get { return velocity.y; }
+        set { velocity.y = value; }
+    }
+    */
+    void Awake()
+    {
+        controller = GetComponent&lt;CharacterController&gt;();
+    }
+    private void Start()
+    {
+        speed = walkSpeed;
+    }
+    void FixedUpdate()
+    {
+        RotateCharacter();
+        MoveCharacter();
+    }
+    public void RotateCharacter()
+    {
+        if (moveinput != Vector2.zero)
+        {
+            Vector3 moveDirection = new Vector3(moveinput.x, 0, moveinput.y);
+            Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
+    }
+    public void MoveCharacter()
+    {
+        float moveSpeed = speed * moveinput.magnitude;
+        velocity = transform.forward * moveSpeed * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime); 
+    }
+
+    public void MoveInput(InputAction.CallbackContext ctx)
+    {
+        moveinput.x = ctx.ReadValue&lt;Vector2&gt;().x;
+        moveinput.y = ctx.ReadValue&lt;Vector2&gt;().y;
+    }
+    public void SprintInput(InputAction.CallbackContext ctx)
+    {
+        if (ctx.action.phase == InputActionPhase.Performed)
+        {
+            speed = sprintSpeed;
+        }
+        if (ctx.action.phase == InputActionPhase.Canceled)
+        {
+            speed = walkSpeed;
+        }
+    }
+}</code></pre>
+                                </div>
+                                <button class="expand-btn" onclick="toggleCode(this)">Expand Code</button>
                             </div>
-                            <p class="feature-label">Interface Design</p>
+                            <p class="script-description">Core character movement with smooth rotation, variable speed control, and sprint functionality using Unity's new Input System</p>
                         </div>
                     </div>
                 </div>
@@ -112,7 +363,7 @@
                 </div>
                 <div class="info-item">
                     <span class="info-label">Focus:</span>
-                    <span class="info-value">Multiplayer implementation</span>
+                    <span class="info-value">Movement, Multiplayer</span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">Status:</span>

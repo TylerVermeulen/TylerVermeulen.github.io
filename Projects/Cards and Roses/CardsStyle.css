@@ -76,6 +76,103 @@ nav.taakbalk li a:hover {
 }
 
 /* Responsive Navbar */
+@media (max-width: 1200px) {
+    nav.taakbalk {
+        padding: 0 20px;
+    }
+    
+    .logo-text {
+        font-size: 1.4rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1.4rem;
+        padding: 8px 14px;
+    }
+    
+    .content-container {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .text-section {
+        padding: 18px;
+    }
+    
+    .info-section {
+        flex: 0 0 320px;
+    }
+}
+
+@media (max-width: 1024px) {
+    nav.taakbalk {
+        padding: 0 15px;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1.3rem;
+        padding: 8px 12px;
+    }
+    
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .text-section {
+        max-width: 100%;
+    }
+    
+    .info-section {
+        flex: 1;
+        width: 100%;
+        max-width: 800px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .info-box {
+        flex: 1;
+        min-width: 280px;
+        max-width: 350px;
+    }
+    
+    .text-section h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .text-section h2 {
+        font-size: 2rem;
+    }
+    
+    .text-section p {
+        font-size: 1rem;
+    }
+    
+    .info-box h3 {
+        font-size: 1.4rem;
+    }
+    
+    .script-item h4 {
+        font-size: 1.1rem;
+    }
+    
+    .development-showcase h3 {
+        font-size: 1.6rem;
+    }
+    
+    .feature-showcase h4 {
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-width: 768px) {
     nav.taakbalk {
         flex-direction: column;
@@ -91,6 +188,509 @@ nav.taakbalk li a:hover {
     nav.taakbalk li a {
         font-size: 1.2rem;
         padding: 8px 12px;
+    }
+    
+    .content-container {
+        padding: 10px;
+        gap: 20px;
+    }
+    
+    .text-section {
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .text-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .text-section p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+    
+    .info-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .info-box {
+        padding: 20px;
+        border-radius: 12px;
+        min-width: unset;
+        max-width: none;
+    }
+    
+    .info-box h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .development-showcase {
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .development-showcase h3 {
+        font-size: 1.5rem;
+    }
+    
+    .script-item {
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .script-item h4 {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+    
+    .code-snippet {
+        padding: 12px;
+        border-radius: 6px;
+        margin: 12px 0;
+    }
+    
+    .code-snippet pre {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+    
+    .expand-btn {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+        border-radius: 5px;
+    }
+    
+    .script-description {
+        font-size: 0.85rem;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 640px) {
+    .content-container {
+        padding: 8px;
+        gap: 15px;
+    }
+    
+    .text-section {
+        padding: 12px;
+    }
+    
+    .text-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .text-section p {
+        font-size: 0.9rem;
+    }
+    
+    .info-box {
+        padding: 15px;
+    }
+    
+    .info-box h3 {
+        font-size: 1.2rem;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        padding: 6px 0;
+    }
+    
+    .info-label, .info-value {
+        font-size: 0.9rem;
+    }
+    
+    .development-showcase {
+        padding: 15px;
+    }
+    
+    .development-showcase h3 {
+        font-size: 1.3rem;
+    }
+    
+    .script-item {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .script-item h4 {
+        font-size: 0.95rem;
+    }
+    
+    .code-snippet {
+        padding: 10px;
+    }
+    
+    .code-snippet pre {
+        font-size: 0.75rem;
+    }
+    
+    .github-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav.taakbalk {
+        padding: 8px 0;
+        border-radius: 20px;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1.1rem;
+        padding: 6px 10px;
+    }
+    
+    .content-container {
+        padding: 5px;
+        gap: 12px;
+    }
+    
+    .text-section {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .text-section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+    
+    .text-section p {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+    
+    .info-box {
+        padding: 12px;
+        border-radius: 10px;
+    }
+    
+    .info-box h3 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+    
+    .info-label, .info-value {
+        font-size: 0.85rem;
+    }
+    
+    .development-showcase {
+        padding: 12px;
+        margin-top: 20px;
+    }
+    
+    .development-showcase h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .feature-showcase h4 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .feature-showcase p {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    
+    .script-item {
+        padding: 10px;
+        margin-bottom: 12px;
+    }
+    
+    .script-item h4 {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+    
+    .code-snippet {
+        padding: 8px;
+        margin: 8px 0;
+    }
+    
+    .code-snippet pre {
+        font-size: 0.7rem;
+        line-height: 1.2;
+    }
+    
+    .expand-btn {
+        padding: 5px 12px;
+        font-size: 0.75rem;
+        margin-top: 8px;
+    }
+    
+    .script-description {
+        font-size: 0.8rem;
+        margin-top: 6px;
+    }
+    
+    .github-button {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    nav.taakbalk {
+        padding: 6px 0;
+        border-radius: 15px;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1rem;
+        padding: 5px 8px;
+    }
+    
+    .text-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .text-section p {
+        font-size: 0.8rem;
+    }
+    
+    .info-box h3 {
+        font-size: 1rem;
+    }
+    
+    .info-label, .info-value {
+        font-size: 0.8rem;
+    }
+    
+    .development-showcase h3 {
+        font-size: 1.1rem;
+    }
+    
+    .script-item h4 {
+        font-size: 0.85rem;
+    }
+    
+    .code-snippet pre {
+        font-size: 0.65rem;
+    }
+    
+    .expand-btn {
+        padding: 4px 10px;
+        font-size: 0.7rem;
+    }
+    
+    .script-description {
+        font-size: 0.75rem;
+    }
+    
+    .github-button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+
+/* 1440p screens (2560x1440) */
+@media (min-width: 2560px) {
+    .content-container {
+        max-width: 2200px;
+        margin: 0 auto;
+        padding: 50px;
+        gap: 60px;
+    }
+    
+    nav.taakbalk {
+        max-width: 2200px;
+        margin: 0 auto;
+        height: 100px;
+        padding: 0 50px;
+    }
+    
+    .logo-text {
+        font-size: 2rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 2rem;
+        padding: 15px 20px;
+    }
+    
+    .text-section {
+        padding: 30px;
+        border-radius: 20px;
+        max-width: 1000px;
+    }
+    
+    .text-section h2 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+    }
+    
+    .text-section p {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+    
+    .info-section {
+        flex: 0 0 450px;
+        gap: 30px;
+    }
+    
+    .info-box {
+        padding: 35px;
+        border-radius: 20px;
+        min-width: 400px;
+        max-width: 450px;
+    }
+    
+    .info-box h3 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+    
+    .info-label, .info-value {
+        font-size: 1.1rem;
+    }
+    
+    .info-item {
+        padding: 12px 0;
+        margin-bottom: 20px;
+    }
+    
+    .development-showcase {
+        padding: 35px;
+        border-radius: 18px;
+        margin-top: 40px;
+    }
+    
+    .development-showcase h3 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .feature-showcase h4 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    
+    .feature-showcase p {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .script-item {
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 35px;
+    }
+    
+    .script-item h4 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+    
+    .code-snippet {
+        padding: 20px;
+        border-radius: 12px;
+        margin: 20px 0;
+    }
+    
+    .code-snippet pre {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .expand-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+        border-radius: 8px;
+        margin-top: 15px;
+    }
+    
+    .script-description {
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+    
+    .github-button {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+        border-radius: 30px;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+    .content-container {
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+    
+    nav.taakbalk {
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+}
+
+/* Large desktop screens */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .content-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+    
+    nav.taakbalk {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* Landscape tablet adjustments */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .content-container {
+        flex-direction: row;
+    }
+    
+    .text-section {
+        flex: 2;
+        max-width: 60%;
+    }
+    
+    .info-section {
+        flex: 1;
+        max-width: 35%;
+        flex-direction: column;
+    }
+}
+
+/* Portrait tablet specific */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .info-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .info-box {
+        flex: 1;
+        min-width: 300px;
     }
 }
 

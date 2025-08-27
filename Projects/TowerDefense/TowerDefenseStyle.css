@@ -76,6 +76,146 @@ nav.taakbalk li a:hover {
 }
 
 /* Responsive Navbar */
+@media (max-width: 1200px) {
+    nav.taakbalk {
+        padding: 0 20px;
+    }
+    
+    .logo-text {
+        font-size: 1.4rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1.4rem;
+        padding: 8px 14px;
+    }
+    
+    .content-container {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .text-section {
+        padding: 18px;
+    }
+    
+    .info-section {
+        flex: 0 0 320px;
+    }
+    
+    .project-info-box {
+        max-width: 280px;
+    }
+    
+    .feature-gallery {
+        gap: 12px;
+    }
+    
+    .feature-item {
+        min-width: 110px;
+    }
+    
+    .sprite-gallery {
+        gap: 15px;
+    }
+    
+    .sprite-item {
+        min-width: 130px;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 1024px) {
+    nav.taakbalk {
+        padding: 0 15px;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1.3rem;
+        padding: 8px 12px;
+    }
+    
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .text-section {
+        max-width: 100%;
+    }
+    
+    .info-section {
+        flex: 1;
+        width: 100%;
+        max-width: 800px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-self: center;
+        position: static;
+    }
+    
+    .project-info-box {
+        max-width: 350px;
+        margin-bottom: 15px;
+    }
+    
+    .text-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .feature-gallery {
+        justify-content: center;
+    }
+    
+    .sprite-gallery {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .text-section h2 {
+        font-size: 2rem;
+    }
+    
+    .text-section p {
+        font-size: 1rem;
+    }
+    
+    .info-box h3 {
+        font-size: 1.4rem;
+    }
+    
+    .development-showcase h3 {
+        font-size: 1.6rem;
+    }
+    
+    .feature-showcase h4 {
+        font-size: 1.2rem;
+    }
+    
+    .sprite-showcase h3 {
+        font-size: 1.4rem;
+    }
+    
+    .visual-sheet-description h3 {
+        font-size: 1.2rem;
+    }
+    
+    .feature-item {
+        min-width: 100px;
+    }
+    
+    .sprite-item {
+        min-width: 120px;
+        max-width: 160px;
+    }
+}
+
 @media (max-width: 768px) {
     nav.taakbalk {
         flex-direction: column;
@@ -91,6 +231,783 @@ nav.taakbalk li a:hover {
     nav.taakbalk li a {
         font-size: 1.2rem;
         padding: 8px 12px;
+    }
+    
+    .content-container {
+        padding: 10px;
+        gap: 20px;
+    }
+    
+    .text-section {
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .text-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .text-section p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+    
+    .info-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .info-box {
+        padding: 20px;
+        border-radius: 12px;
+        min-width: unset;
+        max-width: none;
+    }
+    
+    .info-box h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .project-info-box {
+        max-width: none;
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+        border-radius: 20px;
+    }
+    
+    .project-info-box h3 {
+        font-size: 1.2rem;
+    }
+    
+    .info-label, .info-value {
+        font-size: 0.8rem;
+    }
+    
+    .info-item {
+        padding: 6px 10px;
+    }
+    
+    .project-links {
+        padding: 6px 10px;
+    }
+    
+    .project-icon img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .development-showcase {
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .development-showcase h3 {
+        font-size: 1.5rem;
+    }
+    
+    .feature-gallery {
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .feature-item {
+        min-width: 90px;
+        flex: 0 0 auto;
+    }
+    
+    .feature-placeholder {
+        width: 70px;
+        height: 70px;
+        font-size: 0.7rem;
+    }
+    
+    .feature-label {
+        font-size: 0.8rem;
+    }
+    
+    .sprite-showcase {
+        margin-top: 25px;
+    }
+    
+    .sprite-showcase h3 {
+        font-size: 1.3rem;
+    }
+    
+    .sprite-gallery {
+        gap: 12px;
+        justify-content: center;
+    }
+    
+    .sprite-item {
+        min-width: 100px;
+        max-width: 140px;
+        padding: 12px;
+        border-radius: 12px;
+    }
+    
+    .sprite-image {
+        height: 100px;
+    }
+    
+    .sprite-label {
+        font-size: 0.8rem;
+    }
+    
+    .visual-sheet-description {
+        padding: 15px;
+        margin: 15px auto;
+        border-radius: 15px;
+    }
+    
+    .visual-sheet-description h3 {
+        font-size: 1.1rem;
+    }
+    
+    .visual-sheet-description p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .content-container {
+        padding: 8px;
+        gap: 15px;
+    }
+    
+    .text-section {
+        padding: 12px;
+    }
+    
+    .text-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .text-section p {
+        font-size: 0.9rem;
+    }
+    
+    .info-box {
+        padding: 15px;
+    }
+    
+    .info-box h3 {
+        font-size: 1.2rem;
+    }
+    
+    .project-info-box {
+        padding: 12px;
+    }
+    
+    .project-info-box h3 {
+        font-size: 1.1rem;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        padding: 5px 8px;
+    }
+    
+    .info-label, .info-value {
+        font-size: 0.75rem;
+    }
+    
+    .project-icon img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .development-showcase {
+        padding: 15px;
+    }
+    
+    .development-showcase h3 {
+        font-size: 1.3rem;
+    }
+    
+    .feature-gallery {
+        gap: 8px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .feature-item {
+        min-width: 120px;
+        max-width: 150px;
+    }
+    
+    .feature-placeholder {
+        width: 60px;
+        height: 60px;
+        font-size: 0.65rem;
+    }
+    
+    .feature-label {
+        font-size: 0.75rem;
+    }
+    
+    .sprite-gallery {
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .sprite-item {
+        min-width: 140px;
+        max-width: 180px;
+        padding: 10px;
+    }
+    
+    .sprite-image {
+        height: 80px;
+    }
+    
+    .sprite-label {
+        font-size: 0.75rem;
+    }
+    
+    .visual-sheet-description {
+        padding: 12px;
+        margin: 12px auto;
+    }
+    
+    .visual-sheet-description h3 {
+        font-size: 1rem;
+    }
+    
+    .visual-sheet-description p {
+        font-size: 0.85rem;
+    }
+    
+    .github-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav.taakbalk {
+        padding: 8px 0;
+        border-radius: 20px;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1.1rem;
+        padding: 6px 10px;
+    }
+    
+    .content-container {
+        padding: 5px;
+        gap: 12px;
+    }
+    
+    .text-section {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .text-section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+    
+    .text-section p {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+    
+    .info-box {
+        padding: 12px;
+        border-radius: 10px;
+    }
+    
+    .info-box h3 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+    
+    .project-info-box {
+        padding: 10px;
+        border-radius: 15px;
+    }
+    
+    .project-info-box h3 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .info-label, .info-value {
+        font-size: 0.7rem;
+    }
+    
+    .info-item {
+        padding: 4px 6px;
+    }
+    
+    .project-links {
+        padding: 4px 6px;
+    }
+    
+    .project-icon img {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .development-showcase {
+        padding: 12px;
+        margin-top: 20px;
+    }
+    
+    .development-showcase h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .feature-showcase h4 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .feature-showcase p {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    
+    .feature-gallery {
+        gap: 6px;
+    }
+    
+    .feature-item {
+        min-width: 110px;
+        max-width: 130px;
+    }
+    
+    .feature-placeholder {
+        width: 50px;
+        height: 50px;
+        font-size: 0.6rem;
+        border-radius: 8px;
+    }
+    
+    .feature-label {
+        font-size: 0.7rem;
+    }
+    
+    .sprite-showcase {
+        margin-top: 20px;
+    }
+    
+    .sprite-showcase h3 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    .sprite-gallery {
+        gap: 8px;
+    }
+    
+    .sprite-item {
+        min-width: 130px;
+        max-width: 160px;
+        padding: 8px;
+        border-radius: 10px;
+    }
+    
+    .sprite-image {
+        height: 70px;
+        border-radius: 8px;
+    }
+    
+    .sprite-label {
+        font-size: 0.7rem;
+        margin-top: 8px;
+    }
+    
+    .visual-sheet-description {
+        padding: 10px;
+        margin: 10px auto;
+        border-radius: 12px;
+    }
+    
+    .visual-sheet-description h3 {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+    
+    .visual-sheet-description p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    
+    .github-button {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    nav.taakbalk {
+        padding: 6px 0;
+        border-radius: 15px;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1rem;
+        padding: 5px 8px;
+    }
+    
+    .text-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .text-section p {
+        font-size: 0.8rem;
+    }
+    
+    .info-box h3 {
+        font-size: 1rem;
+    }
+    
+    .project-info-box h3 {
+        font-size: 0.95rem;
+    }
+    
+    .info-label, .info-value {
+        font-size: 0.65rem;
+    }
+    
+    .project-icon img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .development-showcase h3 {
+        font-size: 1.1rem;
+    }
+    
+    .feature-item {
+        min-width: 100px;
+        max-width: 120px;
+    }
+    
+    .feature-placeholder {
+        width: 45px;
+        height: 45px;
+        font-size: 0.55rem;
+    }
+    
+    .feature-label {
+        font-size: 0.65rem;
+    }
+    
+    .sprite-showcase h3 {
+        font-size: 1rem;
+    }
+    
+    .sprite-item {
+        min-width: 120px;
+        max-width: 150px;
+    }
+    
+    .sprite-image {
+        height: 60px;
+    }
+    
+    .sprite-label {
+        font-size: 0.65rem;
+    }
+    
+    .visual-sheet-description h3 {
+        font-size: 0.9rem;
+    }
+    
+    .visual-sheet-description p {
+        font-size: 0.75rem;
+    }
+    
+    .github-button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+
+/* 1440p screens (2560x1440) */
+@media (min-width: 2560px) {
+    .content-container {
+        max-width: 2200px;
+        margin: 0 auto;
+        padding: 50px;
+        gap: 60px;
+    }
+    
+    nav.taakbalk {
+        max-width: 2200px;
+        margin: 0 auto;
+        height: 100px;
+        padding: 0 50px;
+    }
+    
+    .logo-text {
+        font-size: 2rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 2rem;
+        padding: 15px 20px;
+    }
+    
+    .text-section {
+        padding: 30px;
+        border-radius: 20px;
+        max-width: 1000px;
+    }
+    
+    .text-section h2 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+    }
+    
+    .text-section p {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+    
+    .info-section {
+        flex: 0 0 450px;
+        gap: 30px;
+    }
+    
+    .info-box {
+        padding: 35px;
+        border-radius: 20px;
+        min-width: 400px;
+        max-width: 450px;
+    }
+    
+    .info-box h3 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+    
+    .project-info-box {
+        max-width: 450px;
+        padding: 30px;
+        border-radius: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .project-info-box h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .info-label, .info-value {
+        font-size: 1.1rem;
+    }
+    
+    .info-item {
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        border-radius: 15px;
+    }
+    
+    .project-icon img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .development-showcase {
+        padding: 35px;
+        border-radius: 18px;
+        margin-top: 40px;
+    }
+    
+    .development-showcase h3 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .feature-showcase h4 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    
+    .feature-showcase p {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .feature-gallery {
+        gap: 25px;
+    }
+    
+    .feature-item {
+        min-width: 150px;
+        max-width: 200px;
+        padding: 20px;
+    }
+    
+    .feature-placeholder {
+        width: 120px;
+        height: 120px;
+        font-size: 1rem;
+        border-radius: 15px;
+    }
+    
+    .feature-label {
+        font-size: 1.1rem;
+        margin-top: 15px;
+    }
+    
+    .sprite-showcase {
+        margin-top: 50px;
+    }
+    
+    .sprite-showcase h3 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .sprite-gallery {
+        gap: 25px;
+    }
+    
+    .sprite-item {
+        min-width: 200px;
+        max-width: 250px;
+        padding: 20px;
+        border-radius: 20px;
+    }
+    
+    .sprite-image {
+        height: 150px;
+        border-radius: 15px;
+    }
+    
+    .sprite-label {
+        font-size: 1.1rem;
+        margin-top: 15px;
+    }
+    
+    .visual-sheet-description {
+        max-width: 1000px;
+        padding: 30px;
+        border-radius: 25px;
+        margin: 30px auto;
+    }
+    
+    .visual-sheet-description h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .visual-sheet-description p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+    
+    .github-button {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+        border-radius: 30px;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+    .content-container {
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+    
+    nav.taakbalk {
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+    
+    .visual-sheet-description {
+        max-width: 800px;
+    }
+}
+
+/* Large desktop screens */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .content-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+    
+    nav.taakbalk {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .visual-sheet-description {
+        max-width: 700px;
+    }
+}
+
+/* Landscape tablet adjustments */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .content-container {
+        flex-direction: row;
+    }
+    
+    .text-section {
+        flex: 2;
+        max-width: 60%;
+    }
+    
+    .info-section {
+        flex: 1;
+        max-width: 35%;
+        flex-direction: column;
+    }
+    
+    .feature-gallery {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .sprite-gallery {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/* Portrait tablet specific */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .info-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .info-box {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .project-info-box {
+        flex: 1;
+        min-width: 300px;
     }
 }
 

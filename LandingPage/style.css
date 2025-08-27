@@ -70,6 +70,55 @@ nav.taakbalk li a:hover {
     border-radius: 20px;
 }
 /* Responsive Navbar */
+@media (max-width: 1200px) {
+    nav.taakbalk {
+        padding: 0 20px;
+    }
+    
+    .logo-text {
+        font-size: 1.4rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1.4rem;
+        padding: 8px 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    nav.taakbalk {
+        padding: 0 15px;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1.3rem;
+        padding: 8px 12px;
+    }
+    
+    .swiper {
+        width: 95%;
+    }
+    
+    .container {
+        padding-top: 3vh;
+    }
+}
+
+@media (max-width: 900px) {
+    .projects-header {
+        width: 95%;
+        padding: 4vw;
+    }
+    
+    .projects-header h2 {
+        font-size: clamp(1.3rem, 4vw, 2.5rem);
+    }
+}
+
 @media (max-width: 768px) {
     nav.taakbalk {
         flex-direction: column;
@@ -79,7 +128,7 @@ nav.taakbalk li a:hover {
     }
     
     .navbar-logo {
-        order: -1; /* Put logo first on mobile */
+        order: -1;
     }
     
     .logo-text {
@@ -91,7 +140,7 @@ nav.taakbalk li a:hover {
     }
    
     nav.taakbalk ul {
-        flex-direction: row; /* Keep horizontal on mobile */
+        flex-direction: row;
         gap: 15px;
         flex-grow: 0;
     }
@@ -100,15 +149,371 @@ nav.taakbalk li a:hover {
         font-size: 1.2rem;
         padding: 8px 12px;
     }
+    
+    .container {
+        padding-top: 2vh;
+    }
+    
+    .swiper {
+        width: 98%;
+        border-radius: 30px;
+    }
+    
+    .project-name-display {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+    
+    .project-details {
+        padding: 6px 15px 8px 15px;
+        gap: 10px;
+    }
+    
+    .project-engine, .project-time {
+        font-size: 0.8rem;
+    }
 }
+
+@media (max-width: 640px) {
+    .game-card {
+        height: 200px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    
+    .game-card::before {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 12px;
+    }
+    
+    .game-info {
+        bottom: 10px;
+        right: 10px;
+        max-width: 140px;
+    }
+    
+    .game-title {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    
+    .game-details {
+        padding: 3px 8px 4px 8px;
+        flex-direction: column;
+        gap: 2px;
+        font-size: 9px;
+    }
+    
+    .game-engine, .game-time {
+        font-size: 9px;
+    }
+    
+    .game-engine::before, .game-time::before {
+        font-size: 7px;
+    }
+}
+
 @media (max-width: 480px) {
+    nav.taakbalk {
+        padding: 12px 15px;
+        gap: 12px;
+    }
+    
     nav.taakbalk ul {
-        flex-direction: column; /* Stack vertically only on very small screens */
+        flex-direction: column;
         gap: 10px;
     }
     
     .logo-text {
         font-size: 1.2rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1.1rem;
+        padding: 6px 10px;
+    }
+    
+    .container {
+        padding-top: 1vh;
+    }
+    
+    .swiper {
+        width: 100%;
+        border-radius: 20px;
+    }
+    
+    .project-name-display {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        border-radius: 12px 12px 0 0;
+    }
+    
+    .project-details {
+        padding: 5px 12px 6px 12px;
+        border-radius: 0 0 12px 12px;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .project-engine, .project-time {
+        font-size: 0.75rem;
+        text-align: center;
+    }
+    
+    .game-card {
+        height: 180px;
+        padding: 8px;
+        border-radius: 15px;
+    }
+    
+    .game-card::before {
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        border-radius: 10px;
+    }
+    
+    .game-info {
+        bottom: 8px;
+        right: 8px;
+        max-width: 120px;
+    }
+    
+    .game-title {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+    
+    .game-details {
+        padding: 2px 6px 3px 6px;
+        font-size: 8px;
+    }
+    
+    .game-engine, .game-time {
+        font-size: 8px;
+    }
+    
+    .projects-header {
+        width: 98%;
+        padding: 5vw;
+        border-radius: 4vw;
+        margin: 3vw auto;
+    }
+    
+    .projects-header h2 {
+        font-size: clamp(1.2rem, 6vw, 2rem);
+    }
+}
+
+@media (max-width: 360px) {
+    nav.taakbalk {
+        padding: 10px 12px;
+        border-radius: 20px;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 1rem;
+        padding: 5px 8px;
+    }
+    
+    .swiper {
+        border-radius: 15px;
+    }
+    
+    .project-name-display {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .project-details {
+        padding: 4px 10px 5px 10px;
+        border-radius: 0 0 10px 10px;
+    }
+    
+    .project-engine, .project-time {
+        font-size: 0.7rem;
+    }
+    
+    .game-card {
+        height: 160px;
+        padding: 6px;
+        border-radius: 12px;
+    }
+    
+    .game-card::before {
+        top: 6px;
+        left: 6px;
+        right: 6px;
+        bottom: 6px;
+        border-radius: 8px;
+    }
+    
+    .game-info {
+        bottom: 6px;
+        right: 6px;
+        max-width: 100px;
+    }
+    
+    .game-title {
+        font-size: 10px;
+        padding: 2px 5px;
+    }
+    
+    .game-details {
+        padding: 2px 5px;
+        font-size: 7px;
+    }
+    
+    .game-engine, .game-time {
+        font-size: 7px;
+    }
+    
+    .projects-header h2 {
+        font-size: clamp(1rem, 7vw, 1.8rem);
+    }
+}
+
+/* 1440p screens (2560x1440) */
+@media (min-width: 2560px) {
+    .container {
+        max-width: 2200px;
+        margin: 0 auto;
+        padding-top: 6vh;
+    }
+    
+    .swiper {
+        width: 75%;
+        max-width: 1600px;
+        border-radius: 60px;
+    }
+    
+    .projects-header {
+        max-width: 1600px;
+        padding: 3vw;
+    }
+    
+    .projects-header h2 {
+        font-size: clamp(2rem, 4vw, 4rem);
+    }
+    
+    nav.taakbalk {
+        max-width: 2200px;
+        margin: 0 auto;
+        height: 100px;
+        padding: 0 50px;
+    }
+    
+    .logo-text {
+        font-size: 2rem;
+    }
+    
+    nav.taakbalk li a {
+        font-size: 2rem;
+        padding: 15px 20px;
+    }
+    
+    .project-name-display {
+        font-size: 1.6rem;
+        padding: 15px 30px;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .project-details {
+        padding: 12px 30px 15px 30px;
+        border-radius: 0 0 20px 20px;
+        gap: 20px;
+    }
+    
+    .project-engine, .project-time {
+        font-size: 1.2rem;
+    }
+    
+    .game-card {
+        height: 400px;
+        padding: 25px;
+        border-radius: 35px;
+    }
+    
+    .game-card::before {
+        top: 25px;
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+        border-radius: 20px;
+    }
+    
+    .game-info {
+        bottom: 25px;
+        right: 25px;
+        max-width: 300px;
+    }
+    
+    .game-title {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+        border-radius: 12px 12px 0 0;
+    }
+    
+    .game-details {
+        padding: 8px 15px 10px 15px;
+        border-radius: 0 0 12px 12px;
+        gap: 12px;
+    }
+    
+    .game-engine, .game-time {
+        font-size: 1rem;
+    }
+    
+    .game-engine::before, .game-time::before {
+        font-size: 0.9rem;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+    
+    .swiper {
+        width: 80%;
+        max-width: 1400px;
+    }
+    
+    .projects-header {
+        max-width: 1400px;
+    }
+    
+    nav.taakbalk {
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+}
+
+/* Large desktop screens */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .swiper {
+        width: 85%;
+    }
+    
+    nav.taakbalk {
+        max-width: 1400px;
+        margin: 0 auto;
     }
 }
 /* Container & Swiper Styling */
