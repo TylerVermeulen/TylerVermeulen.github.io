@@ -3,6 +3,7 @@ body {
     background-attachment: fixed;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 @font-face{
     font-family: Eurostile;
@@ -10,6 +11,7 @@ body {
 }
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 /* Navbar Styling */
 nav.taakbalk {
@@ -448,59 +450,219 @@ nav.taakbalk li a:hover {
 
 @media (max-width: 360px) {
     nav.taakbalk {
-        padding: 6px 0;
-        border-radius: 15px;
+        padding: 4px 5px;
+        border-radius: 12px;
+        margin: 0 5px;
     }
     
     .logo-text {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     nav.taakbalk li a {
-        font-size: 1rem;
-        padding: 5px 8px;
+        font-size: 0.9rem;
+        padding: 4px 6px;
+    }
+    
+    .content-container {
+        padding: 3px;
+        gap: 8px;
+    }
+    
+    .text-section {
+        padding: 6px;
+        border-radius: 8px;
     }
     
     .text-section h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
     }
     
     .text-section p {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+        margin-bottom: 6px;
+    }
+    
+    .text-section ul {
+        padding-left: 8px;
+        margin-top: 6px;
+    }
+    
+    .text-section li {
+        font-size: 0.75rem;
+        margin-bottom: 3px;
+    }
+    
+    .info-box {
+        padding: 8px;
+        border-radius: 8px;
     }
     
     .info-box h3 {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 8px;
     }
     
     .info-label, .info-value {
-        font-size: 0.8rem;
-    }
-    
-    .development-showcase h3 {
-        font-size: 1.1rem;
-    }
-    
-    .script-item h4 {
-        font-size: 0.85rem;
-    }
-    
-    .code-snippet pre {
-        font-size: 0.65rem;
-    }
-    
-    .expand-btn {
-        padding: 4px 10px;
         font-size: 0.7rem;
     }
     
-    .script-description {
+    .info-item {
+        padding: 2px 0;
+        margin-bottom: 4px;
+    }
+    
+    .development-showcase {
+        padding: 8px;
+        margin-top: 15px;
+    }
+    
+    .development-showcase h3 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .feature-showcase h4 {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+    
+    .feature-showcase p {
         font-size: 0.75rem;
+        margin-bottom: 6px;
+    }
+    
+    .script-item {
+        padding: 6px;
+        margin-bottom: 8px;
+    }
+    
+    .script-item h4 {
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+    }
+    
+    .code-snippet {
+        padding: 5px;
+        margin: 5px 0;
+    }
+    
+    .code-snippet pre {
+        font-size: 0.6rem;
+        line-height: 1.1;
+    }
+    
+    .expand-btn {
+        padding: 3px 8px;
+        font-size: 0.65rem;
+        margin-top: 5px;
+    }
+    
+    .script-description {
+        font-size: 0.7rem;
+        margin-top: 4px;
     }
     
     .github-button {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+}
+
+/* Ultra-small screens (below 320px) */
+@media (max-width: 320px) {
+    nav.taakbalk {
+        padding: 3px 4px;
+        margin: 0 3px;
+        border-radius: 10px;
+    }
+    
+    .logo-text {
+        font-size: 0.9rem;
+    }
+    
+    nav.taakbalk li a {
         font-size: 0.8rem;
-        padding: 6px 12px;
+        padding: 3px 5px;
+    }
+    
+    .content-container {
+        padding: 2px;
+        gap: 6px;
+    }
+    
+    .text-section {
+        padding: 5px;
+    }
+    
+    .text-section h2 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    
+    .text-section p {
+        font-size: 0.7rem;
+        margin-bottom: 5px;
+    }
+    
+    .info-box {
+        padding: 6px;
+    }
+    
+    .info-box h3 {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+    
+    .info-label, .info-value {
+        font-size: 0.65rem;
+    }
+    
+    .development-showcase {
+        padding: 6px;
+        margin-top: 12px;
+    }
+    
+    .development-showcase h3 {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+    
+    .script-item {
+        padding: 5px;
+        margin-bottom: 6px;
+    }
+    
+    .script-item h4 {
+        font-size: 0.75rem;
+        margin-bottom: 5px;
+    }
+    
+    .code-snippet {
+        padding: 4px;
+        margin: 4px 0;
+    }
+    
+    .code-snippet pre {
+        font-size: 0.55rem;
+        line-height: 1.0;
+    }
+    
+    .expand-btn {
+        padding: 2px 6px;
+        font-size: 0.6rem;
+        margin-top: 4px;
+    }
+    
+    .script-description {
+        font-size: 0.65rem;
+        margin-top: 3px;
+    }
+    
+    .github-button {
+        font-size: 0.7rem;
+        padding: 4px 8px;
     }
 }
 
